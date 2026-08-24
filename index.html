@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jarana Food — Burgers & Street Food</title>
+  <meta name="description"
+    content="Jarana Food: las mejores hamburguesas, alitas, hot dogs y street food. Descubre nuestro menú completo.">
+  <meta property="og:title" content="Jarana Food — Burgers & Street Food">
+  <meta property="og:description" content="Las mejores hamburguesas artesanales y street food. ¡Descubre nuestro menú!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaranafood.com">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+</head>
+
+<body>
+  <!-- Smoke Effect Container -->
+  <div id="smoke-container"></div>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="top">
+    <div class="hero-slider">
+      <div class="hero-slide active"><img src="img/classic-burger.jpeg" alt="Hamburguesa clásica Jarana Food"
+          loading="eager"></div>
+      <div class="hero-slide"><img src="img/fullpork-bbq.jpeg" alt="FullPork BBQ burger" loading="lazy"></div>
+      <div class="hero-slide"><img src="img/alitas-bbq.jpeg" alt="Alitas BBQ" loading="lazy"></div>
+      <div class="hero-slide"><img src="img/cheesbacon.jpeg" alt="Patatas CheeseBacon" loading="lazy"></div>
+      <div class="hero-slide"><img src="img/seatel-hotdog.jpeg" alt="Hot Dog Seatel" loading="lazy"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-logo">JARANA FOOD</h1>
+      <p class="hero-tagline">Burgers · Street Food · Good Vibes</p>
+      <a href="#novedades" class="hero-cta">🔥 VER MENÚ</a>
+    </div>
+    <div class="hero-dots">
+      <span class="hero-dot active"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+    </div>
+    <div class="hero-scroll-indicator">▼</div>
+  </section>
+
+  <!-- ═══════════ CATEGORY NAV ═══════════ -->
+  <nav class="category-nav" id="main-nav">
+    <div class="category-nav-inner">
+      <button class="category-btn" data-target="novedades">🔥 Novedades</button>
+      <button class="category-btn" data-target="compartir">🥘 Para Compartir</button>
+      <button class="category-btn" data-target="burgers-ternera">🍔 Burgers Ternera</button>
+      <button class="category-btn" data-target="burgers-chicken">🍔 Burgers Chicken</button>
+      <button class="category-btn" data-target="vegana">🌱 Vegana</button>
+      <button class="category-btn" data-target="hotdogs">🌭 Hot Dogs</button>
+      <button class="category-btn" data-target="sandwiches">🥪 Sandwiches</button>
+      <button class="category-btn" data-target="salsas">🥣 Salsas</button>
+    </div>
+  </nav>
+
+  <main class="menu-container">
+
+    <!-- ═══════════ NOVEDADES ═══════════ -->
+    <section class="menu-section featured-section" id="novedades">
+      <div class="section-header">
+        <span class="section-emoji">🔥</span>
+        <h2 class="section-title">NOVEDADES</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="featured-grid">
+        <div class="featured-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/american-burger.jpeg" alt="M.K Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">M.K BURGER</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, queso cheddar, pepinillo, cebolla caramelizada, salsa MK ·
+              Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">10,90€</span>
+            </div>
+          </div>
+        </div>
+        <div class="featured-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/sixcheese.jpeg" alt="187 Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">187</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, doble cheddar, bacon crujiente, cebolla crispy, salsa 187 ·
+              Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">11,90€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PARA COMPARTIR ═══════════ -->
+    <section class="menu-section" id="compartir">
+      <div class="section-header">
+        <span class="section-emoji">🥘</span>
+        <h2 class="section-title">PARA COMPARTIR</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="menu-subsection">
+        <h3 class="subsection-title">🍟 PATATAS</h3>
+        <div class="menu-grid">
+          <div class="menu-card no-image" data-allergens="Gluten">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">BASIC FRIES</h3>
+              <p class="menu-card-desc">Patatas fritas artesanales con especias de la casa</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">3,50€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <span class="badge badge-popular">⭐ POPULAR</span>
+              <img src="img/cheesbacon.jpeg" alt="Patatas CheesBacon" loading="lazy">
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">CHEESBACON</h3>
+              <p class="menu-card-desc">Patatas, salsa cheddar, bacon crujiente, cebollino</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">6,50€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">TRUFRIES</h3>
+              <p class="menu-card-desc">Patatas, crema de trufa, parmesano, cebollino</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">6,90€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/porky-fries.jpeg" alt="BBQ Fries" loading="lazy">
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">BBQ FRIES</h3>
+              <p class="menu-card-desc">Patatas, pulled pork, salsa BBQ, cheddar, cebollino</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">7,90€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">PORKY FRIES</h3>
+              <p class="menu-card-desc">Patatas, pulled pork, cheddar, salsa Jarana, cebollino</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">7,90€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-subsection">
+        <h3 class="subsection-title">🌮 NACHOS TOTOPOS</h3>
+        <div class="menu-grid">
+          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">TOTOPOS MX</h3>
+              <p class="menu-card-desc">Totopos de maíz, pico de gallo, guacamole, jalapeños, crema agria, cheddar</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">7,90€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">TOTOPOS PULLED PORK</h3>
+              <p class="menu-card-desc">Totopos de maíz, pulled pork, guacamole, jalapeños, crema agria, cheddar</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">9,90€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">CHICKEN NACHOS</h3>
+              <p class="menu-card-desc">Totopos de maíz, pollo crispy, guacamole, jalapeños, crema agria, cheddar</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">9,90€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-subsection">
+        <h3 class="subsection-title">🍗 CHICKEN</h3>
+        <div class="menu-grid">
+          <div class="menu-card" data-allergens="Gluten">
+            <div class="menu-card-image">
+              <img src="img/tender-chicken.jpeg" alt="Tender Chicken" loading="lazy">
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">TENDER CHICKEN</h3>
+              <p class="menu-card-desc">Tiras de pollo crujientes con salsa a elegir (5 uds)</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">6,50€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-allergens="Gluten, Sésamo">
+            <div class="menu-card-image">
+              <img src="img/alitas-bbq.jpeg" alt="Alitas BBQ" loading="lazy">
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">ALITAS BBQ</h3>
+              <p class="menu-card-desc">Alitas de pollo glaseadas con salsa BBQ, sésamo y cebollino (6 uds)</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">7,50€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card no-image" data-allergens="Gluten">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">ALITAS</h3>
+              <p class="menu-card-desc">Alitas de pollo crispy con salsa a elegir (6 uds)</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">6,50€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-subsection">
+        <h3 class="subsection-title">🥘 OTROS ENTRANTES</h3>
+        <div class="menu-grid">
+          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">TEQUEÑOS</h3>
+              <p class="menu-card-desc">Palitos de queso crujientes con salsa de guayaba (5 uds)</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">5,90€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card no-image" data-allergens="Gluten">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">BOLETUS BITES</h3>
+              <p class="menu-card-desc">Croquetas de boletus artesanales (6 uds)</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">5,90€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">MAC AND CHEESE</h3>
+              <p class="menu-card-desc">Macarrones con crema de quesos y toppings</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">6,50€</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-allergens="Gluten">
+            <div class="menu-card-image">
+              <img src="img/ensalada-cesar.jpeg" alt="Ensalada César" loading="lazy">
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-name">ENSALADA CÉSAR</h3>
+              <p class="menu-card-desc">Lechuga romana, pollo crispy, parmesano, croutons, salsa César</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">7,90€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ BURGERS TERNERA ═══════════ -->
+    <section class="menu-section" id="burgers-ternera">
+      <div class="section-header">
+        <span class="section-emoji">🍔</span>
+        <h2 class="section-title">BURGERS TERNERA</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/american-burger.jpeg" alt="M.K Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">M.K BURGER</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, queso cheddar, pepinillo, cebolla caramelizada, salsa MK ·
+              Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">10,90€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/sixcheese.jpeg" alt="187 Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">187</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, doble cheddar, bacon crujiente, cebolla crispy, salsa 187 ·
+              Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">11,90€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <img src="img/classic-burger.jpeg" alt="Classic Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">CLASSIC BURGER</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, cheddar, lechuga, tomate, cebolla, pepinillo, salsa Jarana
+              · Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">9,90€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-popular">⭐ POPULAR</span>
+            <img src="img/fullpork-bbq.jpeg" alt="FullPork BBQ Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">FULLPORK BBQ</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, pulled pork, cheddar, cebolla caramelizada, salsa BBQ · Con
+              patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">12,50€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo">
+          <div class="menu-card-image">
+            <img src="img/american-burger.jpeg" alt="American Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">AMERICAN BURGER</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, bacon, huevo frito, cheddar, lechuga, tomate, salsa
+              americana · Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">11,50€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">TRUFLE BURGER 2.0</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, crema de trufa, brie, rúcula, cebolla caramelizada, salsa
+              de trufa · Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">12,90€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <img src="img/sixcheese.jpeg" alt="Six Cheese Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">SIX CHEESE</h3>
+            <p class="menu-card-desc">Smash de ternera 150g, mezcla de 6 quesos fundidos, cebolla crispy · Con patatas
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">11,90€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ BURGERS CHICKEN ═══════════ -->
+    <section class="menu-section" id="burgers-chicken">
+      <div class="section-header">
+        <span class="section-emoji">🍔</span>
+        <h2 class="section-title">BURGERS CHICKEN</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card no-image" data-allergens="Gluten">
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">BASIC CHICKEN</h3>
+            <p class="menu-card-desc">Pollo crispy, lechuga, tomate, salsa Jarana · Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">8,90€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">CLASSIC CHICKEN</h3>
+            <p class="menu-card-desc">Pollo crispy, cheddar, lechuga, tomate, cebolla, pepinillo, salsa Jarana · Con
+              patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">9,90€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">ANGRY BIRD</h3>
+            <p class="menu-card-desc">Pollo crispy, cheddar, jalapeños, sriracha, lechuga, salsa picante · Con patatas
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">10,50€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <img src="img/golden-chicken.jpeg" alt="Golden Chicken Burger" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">GOLDEN CHICKEN</h3>
+            <p class="menu-card-desc">Pollo crispy, bacon, cheddar, cebolla caramelizada, lechuga, salsa golden · Con
+              patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">11,50€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ VEGANA ═══════════ -->
+    <section class="menu-section" id="vegana">
+      <div class="section-header">
+        <span class="section-emoji">🌱</span>
+        <h2 class="section-title">BURGER VEGANA</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-body">
+            <span class="badge badge-vegana" style="position:static;display:inline-block;margin-bottom:12px;">🌱
+              VEGANA</span>
+            <h3 class="menu-card-name">GREEN BURGER</h3>
+            <p class="menu-card-desc">Smash vegetal Beyond Meat, queso vegano, lechuga, tomate, cebolla, pepinillo,
+              salsa vegana · Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">11,90€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════ HOT DOGS ═══════════ -->
+    <section class="menu-section" id="hotdogs">
+      <div class="section-header">
+        <span class="section-emoji">🌭</span>
+        <h2 class="section-title">HOT DOGS</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card no-image" data-allergens="Gluten, Mostaza">
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">NEW YORK</h3>
+            <p class="menu-card-desc">Salchicha artesanal, mostaza, ketchup, cebolla crispy, pepinillo · Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">8,50€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-popular">⭐ POPULAR</span>
+            <img src="img/seatel-hotdog.jpeg" alt="Seatel Hot Dog" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">SEATEL</h3>
+            <p class="menu-card-desc">Salchicha artesanal, queso cheddar, cebolla caramelizada, cebolla crispy, salsa
+              Jarana · Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">9,50€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SANDWICHES ═══════════ -->
+    <section class="menu-section" id="sandwiches">
+      <div class="section-header">
+        <span class="section-emoji">🥪</span>
+        <h2 class="section-title">SANDWICHES</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Mostaza">
+          <div class="menu-card-image">
+            <img src="img/litaly-sandwich.jpeg" alt="L-Italy Sandwich" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">L-ITALY</h3>
+            <p class="menu-card-desc">Pan de molde tostado, pastrami, queso emmental, pepinillo, mostaza, sauerkraut ·
+              Con patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">10,50€</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">CHICKEN TOWER</h3>
+            <p class="menu-card-desc">Pan brioche, pollo crispy, queso fundido, lechuga, tomate, salsa ranch · Con
+              patatas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">9,90€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SALSAS ═══════════ -->
+    <section class="menu-section" id="salsas">
+      <div class="section-header">
+        <span class="section-emoji">🥣</span>
+        <h2 class="section-title">SALSAS</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="salsas-grid">
+        <div class="salsa-item animate-in">Ketchup</div>
+        <div class="salsa-item animate-in">Mayonesa</div>
+        <div class="salsa-item animate-in">BBQ</div>
+        <div class="salsa-item animate-in">Cheddar</div>
+        <div class="salsa-item animate-in">Miel & Mostaza</div>
+        <div class="salsa-item animate-in">Mayosiracha</div>
+        <div class="salsa-item animate-in">Mayochipotle</div>
+        <div class="salsa-item animate-in">Tijuana</div>
+        <div class="salsa-item salsa-especial animate-in">
+          <span class="badge badge-popular"
+            style="position:static; margin-bottom: 8px; display:inline-block; font-size:0.6rem;">⭐ ESPECIALIDAD DE LA
+            CASA</span><br>
+          La Jarana
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CUSTOM BURGER ═══════════ -->
+    <section class="menu-section custom-section" id="custom">
+      <div class="custom-card">
+        <div class="custom-emoji">🎯</div>
+        <h2 class="custom-title">MONTA TU BURGER</h2>
+        <p class="custom-desc">Elige tu pan, proteína, queso, toppings y salsas. Crea la hamburguesa de tus sueños a tu
+          gusto.</p>
+        <div class="custom-price">DESDE 7€</div>
+        <p class="custom-price-note">Precio según ingredientes seleccionados</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ INSTAGRAM CTA ═══════════ -->
+  <section class="instagram-section">
+    <div class="instagram-card">
+      <div class="instagram-icon">📸</div>
+      <h2 class="instagram-title">SÍGUENOS EN INSTAGRAM</h2>
+      <span class="instagram-handle">@jarana_food</span>
+      <a href="https://www.instagram.com/jarana_food/" target="_blank" rel="noopener" class="instagram-btn">
+        SEGUIR EN INSTAGRAM →
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-logo">JARANA FOOD</div>
+    <div class="footer-info">
+      <p>Burgers · Street Food · Good Vibes</p>
+      <p><a href="https://www.instagram.com/jarana_food/" target="_blank" rel="noopener">@jarana_food</a></p>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Jarana Food. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════ PRODUCT MODAL ═══════════ -->
+  <div id="product-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image-container">
+          <img id="modal-img" src="" alt="Producto">
+        </div>
+        <div class="modal-details">
+          <div class="modal-title-wrapper">
+            <h3 id="modal-title" class="modal-title"></h3>
+            <span id="modal-badge" class="badge"></span>
+          </div>
+          <p id="modal-desc" class="modal-desc"></p>
+          <div class="modal-allergens-container">
+            <span class="allergens-label">⚠️ Alérgenos:</span>
+            <span id="modal-allergens" class="allergens-text"></span>
+          </div>
+          <div class="modal-footer-price">
+            <span id="modal-price" class="modal-price"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
