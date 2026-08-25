@@ -93,6 +93,168 @@ button {
 }
 
 /* ═══════════════════════════════════════════
+   PRELOADER & LOADING SCREEN
+   ═══════════════════════════════════════════ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s var(--ease-out), visibility 0.6s var(--ease-out);
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+.preloader-logo {
+  width: 220px;
+  max-width: 70vw;
+  animation: pulseLogo 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(232, 197, 71, 0.4));
+}
+
+@keyframes pulseLogo {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(232, 197, 71, 0.4)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(232, 197, 71, 0.6)); }
+}
+
+/* Burger Loader CSS Art */
+.burger-loader {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+}
+
+.burger-part {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0;
+  animation-duration: 2.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-fill-mode: forwards;
+}
+
+.bun-top {
+  height: 35px;
+  background: #e49e49;
+  border-radius: 40px 40px 8px 8px;
+  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.15), inset 5px 5px 10px rgba(255,255,255,0.15);
+  position: relative;
+  animation-name: dropBunTop;
+}
+
+/* Semillas de sésamo */
+.bun-top::before, .bun-top::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 6px;
+  background: #fdf2c6;
+  border-radius: 50%;
+  top: 10px;
+  left: 20px;
+  transform: rotate(20deg);
+  box-shadow: 20px 5px 0 #fdf2c6, 40px -2px 0 #fdf2c6, 60px 8px 0 #fdf2c6;
+}
+
+.bun-top::after {
+  top: 18px;
+  left: 30px;
+  transform: rotate(-15deg);
+  box-shadow: 25px -4px 0 #fdf2c6, -15px 4px 0 #fdf2c6;
+}
+
+.lettuce {
+  height: 8px;
+  background: #73c834;
+  border-radius: 5px;
+  width: 110%;
+  animation-name: dropLettuce;
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.2);
+}
+
+.cheese {
+  height: 8px;
+  background: #ffc107;
+  border-radius: 5px;
+  width: 105%;
+  animation-name: dropCheese;
+  position: relative;
+}
+
+.cheese::after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  background: #ffc107;
+  border-radius: 0 0 5px 5px;
+  transform: skewY(20deg);
+}
+
+.meat {
+  height: 20px;
+  background: #6e3d23;
+  border-radius: 12px;
+  width: 100%;
+  animation-name: dropMeat;
+  box-shadow: inset -3px -3px 8px rgba(0,0,0,0.4);
+}
+
+.bun-bottom {
+  height: 20px;
+  background: #e49e49;
+  border-radius: 8px 8px 20px 20px;
+  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.15);
+  animation-name: dropBunBottom;
+}
+
+@keyframes dropBunBottom {
+  0%, 5% { transform: translateY(-50px); opacity: 0; }
+  15%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes dropMeat {
+  0%, 20% { transform: translateY(-100px); opacity: 0; }
+  30%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes dropCheese {
+  0%, 35% { transform: translateY(-150px); opacity: 0; }
+  45%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes dropLettuce {
+  0%, 50% { transform: translateY(-200px); opacity: 0; }
+  60%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes dropBunTop {
+  0%, 65% { transform: translateY(-250px); opacity: 0; }
+  75%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════
    HERO SECTION
    ═══════════════════════════════════════════ */
 
@@ -152,14 +314,12 @@ button {
 }
 
 .hero-logo {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 12vw, 7rem);
-  color: var(--accent-yellow);
-  letter-spacing: 4px;
-  line-height: 1;
-  text-shadow: 0 0 40px rgba(232, 197, 71, 0.4);
-  margin-bottom: var(--space-sm);
-  animation: glowPulse 3s ease-in-out infinite;
+  max-width: 90%;
+  width: clamp(250px, 40vw, 450px);
+  height: auto;
+  margin: 0 auto var(--space-md) auto;
+  animation: glowPulseImg 3s ease-in-out infinite;
+  display: block;
 }
 
 .hero-tagline {
@@ -205,6 +365,11 @@ button {
 @keyframes glowPulse {
   0%, 100% { text-shadow: 0 0 40px rgba(232, 197, 71, 0.4); }
   50% { text-shadow: 0 0 60px rgba(232, 197, 71, 0.6), 0 0 100px rgba(232, 197, 71, 0.2); }
+}
+
+@keyframes glowPulseImg {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(232, 197, 71, 0.4)); }
+  50% { filter: drop-shadow(0 0 30px rgba(232, 197, 71, 0.6)); }
 }
 
 @keyframes bounce {
@@ -484,13 +649,23 @@ button {
   vertical-align: super;
 }
 
-/* Card without image */
-.menu-card.no-image .menu-card-body {
-  padding: var(--space-xl) var(--space-lg);
+/* Placeholder image */
+.placeholder-image {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.5), rgba(40, 40, 40, 0.5));
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  min-height: 160px;
+}
+
+.placeholder-text {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: rotate(-5deg);
+  opacity: 0.5;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* ═══════════════════════════════════════════

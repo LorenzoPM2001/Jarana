@@ -11,12 +11,25 @@
   <meta property="og:description" content="Las mejores hamburguesas artesanales y street food. ¡Descubre nuestro menú!">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaranafood.com">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="icon" href="img/LogoJarana.png" type="image/png">
 </head>
 
 <body>
+  <!-- ═══════════ PRELOADER ═══════════ -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <img src="img/LogoJarana.png" alt="Cargando Jarana Food" class="preloader-logo">
+      <div class="burger-loader">
+        <div class="burger-part bun-top"></div>
+        <div class="burger-part lettuce"></div>
+        <div class="burger-part cheese"></div>
+        <div class="burger-part meat"></div>
+        <div class="burger-part bun-bottom"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Smoke Effect Container -->
   <div id="smoke-container"></div>
 
@@ -32,7 +45,7 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-logo">JARANA FOOD</h1>
+      <img src="img/LogoJarana.png" alt="Jarana Food" class="hero-logo">
       <p class="hero-tagline">Burgers · Street Food · Good Vibes</p>
       <a href="#novedades" class="hero-cta">🔥 VER MENÚ</a>
     </div>
@@ -70,31 +83,33 @@
         <div class="section-line"></div>
       </div>
       <div class="featured-grid">
+        <!-- ═══════════ M.K BURGER ═══════════ -->
         <div class="featured-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/american-burger.jpeg" alt="M.K Burger" loading="lazy">
+            <img src="img/mk-burger.jpeg" alt="M.K Burger" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">M.K BURGER</h3>
-            <p class="menu-card-desc">Smash de ternera 150g, queso cheddar, pepinillo, cebolla caramelizada, salsa MK ·
-              Con patatas</p>
+            <p class="menu-card-desc">Pan Brioche, Pollo Crispy, Bañado en salsa Mango-Habanero y Teriyaki, Base de
+              Colslaw(Ensalada de Col), Doble queso Havarti, Semillas de Sésamo</p>
             <div class="menu-card-footer">
-              <span class="menu-card-price">10,90€</span>
+              <span class="menu-card-price">13€</span>
             </div>
           </div>
         </div>
+        <!-- ═══════════ 187 ═══════════ -->
         <div class="featured-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/sixcheese.jpeg" alt="187 Burger" loading="lazy">
+            <img src="img/187-burger.jpeg" alt="187 Burger" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">187</h3>
-            <p class="menu-card-desc">Smash de ternera 150g, doble cheddar, bacon crujiente, cebolla crispy, salsa 187 ·
-              Con patatas</p>
+            <p class="menu-card-desc">Pan Juanito Baker, Doble smash Rubia gallega, Doble cheddar ahumado, Mermelada de
+              bacon casera, Costilla desmigada, Salsa "MayoTijuana" casera, coronado con pipas caramelizadas</p>
             <div class="menu-card-footer">
-              <span class="menu-card-price">11,90€</span>
+              <span class="menu-card-price">12,90€</span>
             </div>
           </div>
         </div>
@@ -112,55 +127,72 @@
       <div class="menu-subsection">
         <h3 class="subsection-title">🍟 PATATAS</h3>
         <div class="menu-grid">
-          <div class="menu-card no-image" data-allergens="Gluten">
+          <!-- ═══════════ BASIC FRIES ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten">
+            <div class="menu-card-image">
+              <img src="img/basic-fries.jpeg" alt="BASIC FRIES" onerror="handleImageError(this)" loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">BASIC FRIES</h3>
-              <p class="menu-card-desc">Patatas fritas artesanales con especias de la casa</p>
+              <p class="menu-card-desc">Patatas fritas con salsa a elegir</p>
               <div class="menu-card-footer">
-                <span class="menu-card-price">3,50€</span>
+                <span class="menu-card-price">4,50€</span>
               </div>
             </div>
           </div>
+          <!-- ═══════════ CHEESBACON ═══════════ -->
           <div class="menu-card" data-allergens="Gluten, Lácteos">
             <div class="menu-card-image">
               <span class="badge badge-popular">⭐ POPULAR</span>
-              <img src="img/cheesbacon.jpeg" alt="Patatas CheesBacon" loading="lazy">
+              <img src="img/cheesbacon.jpeg" alt="Patatas CheesBacon" loading="lazy" onerror="handleImageError(this)">
             </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">CHEESBACON</h3>
-              <p class="menu-card-desc">Patatas, salsa cheddar, bacon crujiente, cebollino</p>
+              <p class="menu-card-desc">Patatas, salsa cheddar, bacon crujiente, Coronado con cebollino</p>
               <div class="menu-card-footer">
-                <span class="menu-card-price">6,50€</span>
+                <span class="menu-card-price">7,50€</span>
               </div>
             </div>
           </div>
-          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <!-- ═══════════ TRUFRIES ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/trufries.jpeg" alt="TRUFRIES" onerror="handleImageError(this)" loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">TRUFRIES</h3>
-              <p class="menu-card-desc">Patatas, crema de trufa, parmesano, cebollino</p>
+              <p class="menu-card-desc">Salsa MayoTrufa, Parmesano en polvo, Cebolla caramelizada, Coronado con lascas
+                de parmesano y cebollino</p>
               <div class="menu-card-footer">
-                <span class="menu-card-price">6,90€</span>
+                <span class="menu-card-price">8€</span>
               </div>
             </div>
           </div>
+          <!-- ═══════════ BBQ FRIES ═══════════ -->
           <div class="menu-card" data-allergens="Gluten, Lácteos">
             <div class="menu-card-image">
-              <img src="img/porky-fries.jpeg" alt="BBQ Fries" loading="lazy">
+              <img src="img/bbq-fries.jpeg" alt="BBQ Fries" loading="lazy" onerror="handleImageError(this)">
             </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">BBQ FRIES</h3>
-              <p class="menu-card-desc">Patatas, pulled pork, salsa BBQ, cheddar, cebollino</p>
+              <p class="menu-card-desc">Patatas, Pulled Pork BBQ, Salsa BBQ Ahumada, Cheddar, Cebolla frita y Coronado
+                con cebollino</p>
               <div class="menu-card-footer">
-                <span class="menu-card-price">7,90€</span>
+                <span class="menu-card-price">8,50€</span>
               </div>
             </div>
           </div>
-          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <!-- ═══════════ PORKY FRIES ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/porky-fries.jpeg" alt="PORKY FRIES" onerror="handleImageError(this)" loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">PORKY FRIES</h3>
-              <p class="menu-card-desc">Patatas, pulled pork, cheddar, salsa Jarana, cebollino</p>
+              <p class="menu-card-desc">Patatas, Salsa Mayochip, Mix de Quesos fundido, Pulled Pork y Coronado con
+                cebollino</p>
               <div class="menu-card-footer">
-                <span class="menu-card-price">7,90€</span>
+                <span class="menu-card-price">8,50€</span>
               </div>
             </div>
           </div>
@@ -170,7 +202,11 @@
       <div class="menu-subsection">
         <h3 class="subsection-title">🌮 NACHOS TOTOPOS</h3>
         <div class="menu-grid">
-          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <!-- ═══════════ TOTOPOS MX ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/totopos-mx.jpeg" alt="TOTOPOS MX" onerror="handleImageError(this)" loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">TOTOPOS MX</h3>
               <p class="menu-card-desc">Totopos de maíz, pico de gallo, guacamole, jalapeños, crema agria, cheddar</p>
@@ -179,7 +215,12 @@
               </div>
             </div>
           </div>
-          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <!-- ═══════════ TOTOPOS PULLED PORK ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/totopos-pulled-pork.jpeg" alt="TOTOPOS PULLED PORK" onerror="handleImageError(this)"
+                loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">TOTOPOS PULLED PORK</h3>
               <p class="menu-card-desc">Totopos de maíz, pulled pork, guacamole, jalapeños, crema agria, cheddar</p>
@@ -188,7 +229,11 @@
               </div>
             </div>
           </div>
-          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <!-- ═══════════ CHICKEN NACHOS ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/chicken-nachos.jpeg" alt="CHICKEN NACHOS" onerror="handleImageError(this)" loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">CHICKEN NACHOS</h3>
               <p class="menu-card-desc">Totopos de maíz, pollo crispy, guacamole, jalapeños, crema agria, cheddar</p>
@@ -203,9 +248,10 @@
       <div class="menu-subsection">
         <h3 class="subsection-title">🍗 CHICKEN</h3>
         <div class="menu-grid">
+          <!-- ═══════════ TENDER CHICKEN ═══════════ -->
           <div class="menu-card" data-allergens="Gluten">
             <div class="menu-card-image">
-              <img src="img/tender-chicken.jpeg" alt="Tender Chicken" loading="lazy">
+              <img src="img/tender-chicken.jpeg" alt="Tender Chicken" loading="lazy" onerror="handleImageError(this)">
             </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">TENDER CHICKEN</h3>
@@ -215,9 +261,10 @@
               </div>
             </div>
           </div>
+          <!-- ═══════════ ALITAS BBQ ═══════════ -->
           <div class="menu-card" data-allergens="Gluten, Sésamo">
             <div class="menu-card-image">
-              <img src="img/alitas-bbq.jpeg" alt="Alitas BBQ" loading="lazy">
+              <img src="img/alitas-bbq.jpeg" alt="Alitas BBQ" loading="lazy" onerror="handleImageError(this)">
             </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">ALITAS BBQ</h3>
@@ -227,7 +274,11 @@
               </div>
             </div>
           </div>
-          <div class="menu-card no-image" data-allergens="Gluten">
+          <!-- ═══════════ ALITAS ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten">
+            <div class="menu-card-image">
+              <img src="img/alitas.jpeg" alt="ALITAS" onerror="handleImageError(this)" loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">ALITAS</h3>
               <p class="menu-card-desc">Alitas de pollo crispy con salsa a elegir (6 uds)</p>
@@ -242,7 +293,11 @@
       <div class="menu-subsection">
         <h3 class="subsection-title">🥘 OTROS ENTRANTES</h3>
         <div class="menu-grid">
-          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+          <!-- ═══════════ TEQUEÑOS ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/tequenos.jpeg" alt="TEQUEÑOS" onerror="handleImageError(this)" loading="lazy">
+            </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">TEQUEÑOS</h3>
               <p class="menu-card-desc">Palitos de queso crujientes con salsa de guayaba (5 uds)</p>
@@ -251,16 +306,11 @@
               </div>
             </div>
           </div>
-          <div class="menu-card no-image" data-allergens="Gluten">
-            <div class="menu-card-body">
-              <h3 class="menu-card-name">BOLETUS BITES</h3>
-              <p class="menu-card-desc">Croquetas de boletus artesanales (6 uds)</p>
-              <div class="menu-card-footer">
-                <span class="menu-card-price">5,90€</span>
-              </div>
+          <!-- ═══════════ MAC AND CHEESE ═══════════ -->
+          <div class="menu-card " data-allergens="Gluten, Lácteos">
+            <div class="menu-card-image">
+              <img src="img/mac-and-cheese.jpeg" alt="MAC AND CHEESE" onerror="handleImageError(this)" loading="lazy">
             </div>
-          </div>
-          <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
             <div class="menu-card-body">
               <h3 class="menu-card-name">MAC AND CHEESE</h3>
               <p class="menu-card-desc">Macarrones con crema de quesos y toppings</p>
@@ -269,9 +319,10 @@
               </div>
             </div>
           </div>
+          <!-- ═══════════ ENSALADA CÉSAR ═══════════ -->
           <div class="menu-card" data-allergens="Gluten">
             <div class="menu-card-image">
-              <img src="img/ensalada-cesar.jpeg" alt="Ensalada César" loading="lazy">
+              <img src="img/ensalada-cesar.jpeg" alt="Ensalada César" loading="lazy" onerror="handleImageError(this)">
             </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">ENSALADA CÉSAR</h3>
@@ -292,37 +343,25 @@
         <div class="section-line"></div>
       </div>
       <div class="menu-grid">
+        <!-- ═══════════ 187 ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/american-burger.jpeg" alt="M.K Burger" loading="lazy">
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">M.K BURGER</h3>
-            <p class="menu-card-desc">Smash de ternera 150g, queso cheddar, pepinillo, cebolla caramelizada, salsa MK ·
-              Con patatas</p>
-            <div class="menu-card-footer">
-              <span class="menu-card-price">10,90€</span>
-            </div>
-          </div>
-        </div>
-        <div class="menu-card" data-allergens="Gluten, Lácteos">
-          <div class="menu-card-image">
-            <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/sixcheese.jpeg" alt="187 Burger" loading="lazy">
+            <img src="img/sixcheese.jpeg" alt="187 Burger" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">187</h3>
-            <p class="menu-card-desc">Smash de ternera 150g, doble cheddar, bacon crujiente, cebolla crispy, salsa 187 ·
-              Con patatas</p>
+            <p class="menu-card-desc">Pan Juanito Baker, Doble smash Rubia gallega, Doble cheddar ahumado, Mermelada de
+              bacon casera, Costilla desmigada, Salsa "MayoTijuana" casera, coronado con pipas caramelizadas</p>
             <div class="menu-card-footer">
-              <span class="menu-card-price">11,90€</span>
+              <span class="menu-card-price">12,90€</span>
             </div>
           </div>
         </div>
+        <!-- ═══════════ CLASSIC BURGER ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
-            <img src="img/classic-burger.jpeg" alt="Classic Burger" loading="lazy">
+            <img src="img/classic-burger.jpeg" alt="Classic Burger" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">CLASSIC BURGER</h3>
@@ -333,10 +372,11 @@
             </div>
           </div>
         </div>
+        <!-- ═══════════ FULLPORK BBQ ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
             <span class="badge badge-popular">⭐ POPULAR</span>
-            <img src="img/fullpork-bbq.jpeg" alt="FullPork BBQ Burger" loading="lazy">
+            <img src="img/fullpork-bbq.jpeg" alt="FullPork BBQ Burger" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">FULLPORK BBQ</h3>
@@ -347,9 +387,10 @@
             </div>
           </div>
         </div>
+        <!-- ═══════════ AMERICAN BURGER ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo">
           <div class="menu-card-image">
-            <img src="img/american-burger.jpeg" alt="American Burger" loading="lazy">
+            <img src="img/american-burger.jpeg" alt="American Burger" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">AMERICAN BURGER</h3>
@@ -360,7 +401,12 @@
             </div>
           </div>
         </div>
-        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+        <!-- ═══════════ TRUFLE BURGER ═══════════ -->
+        <div class="menu-card " data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <img src="img/trufle-burger-2-0.jpeg" alt="TRUFLE BURGER 2.0" onerror="handleImageError(this)"
+              loading="lazy">
+          </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">TRUFLE BURGER 2.0</h3>
             <p class="menu-card-desc">Smash de ternera 150g, crema de trufa, brie, rúcula, cebolla caramelizada, salsa
@@ -370,9 +416,10 @@
             </div>
           </div>
         </div>
+        <!-- ═══════════ SIX CHEESE ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
-            <img src="img/sixcheese.jpeg" alt="Six Cheese Burger" loading="lazy">
+            <img src="img/sixcheese.jpeg" alt="Six Cheese Burger" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">SIX CHEESE</h3>
@@ -394,7 +441,26 @@
         <div class="section-line"></div>
       </div>
       <div class="menu-grid">
-        <div class="menu-card no-image" data-allergens="Gluten">
+        <!-- ═══════════ M.K BURGER ═══════════ -->
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/american-burger.jpeg" alt="M.K Burger" loading="lazy" onerror="handleImageError(this)">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">M.K BURGER</h3>
+            <p class="menu-card-desc">Pan Brioche, Pollo Crispy, Bañado en salsa Mango-Habanero y Teriyaki, Base de
+              Colslaw(Ensalada de Col), Doble queso Havarti, Semillas de Sésamo</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">13€</span>
+            </div>
+          </div>
+        </div>
+        <!-- ═══════════ BASIC CHICKEN ═══════════ -->
+        <div class="menu-card " data-allergens="Gluten">
+          <div class="menu-card-image">
+            <img src="img/basic-chicken.jpeg" alt="BASIC CHICKEN" onerror="handleImageError(this)" loading="lazy">
+          </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">BASIC CHICKEN</h3>
             <p class="menu-card-desc">Pollo crispy, lechuga, tomate, salsa Jarana · Con patatas</p>
@@ -403,7 +469,11 @@
             </div>
           </div>
         </div>
-        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+        <!-- ═══════════ CLASSIC CHICKEN ═══════════ -->
+        <div class="menu-card " data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <img src="img/classic-chicken.jpeg" alt="CLASSIC CHICKEN" onerror="handleImageError(this)" loading="lazy">
+          </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">CLASSIC CHICKEN</h3>
             <p class="menu-card-desc">Pollo crispy, cheddar, lechuga, tomate, cebolla, pepinillo, salsa Jarana · Con
@@ -413,19 +483,11 @@
             </div>
           </div>
         </div>
-        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">ANGRY BIRD</h3>
-            <p class="menu-card-desc">Pollo crispy, cheddar, jalapeños, sriracha, lechuga, salsa picante · Con patatas
-            </p>
-            <div class="menu-card-footer">
-              <span class="menu-card-price">10,50€</span>
-            </div>
-          </div>
-        </div>
+        <!-- ═══════════ GOLDEN CHICKEN ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
-            <img src="img/golden-chicken.jpeg" alt="Golden Chicken Burger" loading="lazy">
+            <img src="img/golden-chicken.jpeg" alt="Golden Chicken Burger" loading="lazy"
+              onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">GOLDEN CHICKEN</h3>
@@ -447,7 +509,11 @@
         <div class="section-line"></div>
       </div>
       <div class="menu-grid">
-        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+        <!-- ═══════════ GREEN BURGER ═══════════ -->
+        <div class="menu-card " data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <img src="img/green-burger.jpeg" alt="GREEN BURGER" onerror="handleImageError(this)" loading="lazy">
+          </div>
           <div class="menu-card-body">
             <span class="badge badge-vegana" style="position:static;display:inline-block;margin-bottom:12px;">🌱
               VEGANA</span>
@@ -472,7 +538,11 @@
         <div class="section-line"></div>
       </div>
       <div class="menu-grid">
-        <div class="menu-card no-image" data-allergens="Gluten, Mostaza">
+        <!-- ═══════════ NEW YORK ═══════════ -->
+        <div class="menu-card " data-allergens="Gluten, Mostaza">
+          <div class="menu-card-image">
+            <img src="img/new-york.jpeg" alt="NEW YORK" onerror="handleImageError(this)" loading="lazy">
+          </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">NEW YORK</h3>
             <p class="menu-card-desc">Salchicha artesanal, mostaza, ketchup, cebolla crispy, pepinillo · Con patatas</p>
@@ -481,10 +551,11 @@
             </div>
           </div>
         </div>
+        <!-- ═══════════ SEATEL ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
             <span class="badge badge-popular">⭐ POPULAR</span>
-            <img src="img/seatel-hotdog.jpeg" alt="Seatel Hot Dog" loading="lazy">
+            <img src="img/seatel-hotdog.jpeg" alt="Seatel Hot Dog" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">SEATEL</h3>
@@ -506,9 +577,10 @@
         <div class="section-line"></div>
       </div>
       <div class="menu-grid">
+        <!-- ═══════════ L-ITALY ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos, Mostaza">
           <div class="menu-card-image">
-            <img src="img/litaly-sandwich.jpeg" alt="L-Italy Sandwich" loading="lazy">
+            <img src="img/litaly-sandwich.jpeg" alt="L-Italy Sandwich" loading="lazy" onerror="handleImageError(this)">
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">L-ITALY</h3>
@@ -519,7 +591,11 @@
             </div>
           </div>
         </div>
-        <div class="menu-card no-image" data-allergens="Gluten, Lácteos">
+        <!-- ═══════════ CHICKEN TOWER ═══════════ -->
+        <div class="menu-card " data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <img src="img/chicken-tower.jpeg" alt="CHICKEN TOWER" onerror="handleImageError(this)" loading="lazy">
+          </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">CHICKEN TOWER</h3>
             <p class="menu-card-desc">Pan brioche, pollo crispy, queso fundido, lechuga, tomate, salsa ranch · Con
@@ -622,7 +698,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 
 </html>

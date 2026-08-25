@@ -2,13 +2,29 @@
    JARANA FOOD — Interactive Scripts
    ═══════════════════════════════════════════ */
 
+// Retardo mínimo para que la animación se vea bien, pero sin bloquear al usuario
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  if (preloader && !preloader.classList.contains('fade-out')) {
+    preloader.classList.add('fade-out');
+    setTimeout(() => {
+      preloader.remove();
+    }, 600);
+  }
+}
+
+// Usamos DOMContentLoaded para que sea mucho más rápido y no espere a imágenes que no existen
 document.addEventListener('DOMContentLoaded', () => {
+  // Inicializaciones previas
   initHeroSlider();
   initScrollAnimations();
   initCategoryNav();
   initStickyNavShadow();
   initSmokeEffect();
   initProductModal();
+
+  // Ocultar preloader después de un tiempo suficiente para ver la animación (2.5s)
+  setTimeout(hidePreloader, 2500);
 });
 
 /* ───────────────────────────────────────────
@@ -201,6 +217,7 @@ function initProductModal() {
   const overlay = modal.querySelector('.modal-overlay');
   const closeBtn = modal.querySelector('.modal-close');
   const imgEl = document.getElementById('modal-img');
+  const imageContainer = modal.querySelector('.modal-image-container');
   const titleEl = document.getElementById('modal-title');
   const badgeEl = document.getElementById('modal-badge');
   const descEl = document.getElementById('modal-desc');
@@ -239,8 +256,20 @@ function initProductModal() {
       if (imgSrc) {
         imgEl.src = imgSrc;
         imgEl.style.display = 'block';
+        imageContainer.classList.remove('placeholder-image');
+        const pText = imageContainer.querySelector('.placeholder-text');
+        if (pText) pText.style.display = 'none';
       } else {
         imgEl.style.display = 'none';
+        imageContainer.classList.add('placeholder-image');
+        let pText = imageContainer.querySelector('.placeholder-text');
+        if (!pText) {
+          pText = document.createElement('span');
+          pText.className = 'placeholder-text';
+          pText.textContent = 'PRÓXIMAMENTE';
+          imageContainer.appendChild(pText);
+        }
+        pText.style.display = 'block';
       }
 
       if (allergens) {
@@ -264,3 +293,23 @@ function initProductModal() {
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 }
+
+/* ───────────────────────────────────────────
+   Dynamic Image Fallback
+   ─────────────────────────────────────────── */
+window.handleImageError = function(img) {
+  // Evitar bucles infinitos
+  img.onerror = null; 
+  img.style.display = 'none'; // Simplemente la ocultamos, no la eliminamos del HTML
+  
+  const container = img.parentElement;
+  container.classList.add('placeholder-image');
+  
+  // Si no tiene ya el texto de próximamente, se lo ponemos
+  if (!container.querySelector('.placeholder-text')) {
+    const span = document.createElement('span');
+    span.className = 'placeholder-text';
+    span.textContent = 'PRÓXIMAMENTE';
+    container.appendChild(span);
+  }
+};
