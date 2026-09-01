@@ -1,5 +1,6 @@
 # Backup de imágenes originales (sin comprimir)
 img_originals/
 
-# Script de optimización (no necesario en producción)
+# Scripts de optimización (no necesarios en producción)
 optimize_images.sh
+reorganize_images.sh

@@ -9,12 +9,12 @@ function initWebPSwap() {
   // Comprobar soporte WebP
   const canvas = document.createElement('canvas');
   if (canvas.toDataURL && canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0) {
-    // El navegador soporta WebP → reemplazar todas las img con versión .webp
+    // El navegador soporta WebP → reemplazar img jpg/png por su versión webp
     document.querySelectorAll('img[src]').forEach(img => {
       const src = img.getAttribute('src');
-      // Solo reemplazar imágenes locales jpg/jpeg/png (no URLs externas)
       if (src && !src.startsWith('http') && /\.(jpg|jpeg|png)$/i.test(src)) {
-        const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+        // Cambiar carpeta jpg/ → webp/ y extensión → .webp
+        const webpSrc = src.replace('/jpg/', '/webp/').replace(/\.(jpg|jpeg|png)$/i, '.webp');
         img.setAttribute('src', webpSrc);
       }
     });
