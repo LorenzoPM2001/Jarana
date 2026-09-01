@@ -2,6 +2,25 @@
    JARANA FOOD — Interactive Scripts
    ═══════════════════════════════════════════ */
 
+/* ───────────────────────────────────────────
+   WebP Auto-Swap: sirve WebP cuando el navegador lo soporta
+   ─────────────────────────────────────────── */
+function initWebPSwap() {
+  // Comprobar soporte WebP
+  const canvas = document.createElement('canvas');
+  if (canvas.toDataURL && canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0) {
+    // El navegador soporta WebP → reemplazar todas las img con versión .webp
+    document.querySelectorAll('img[src]').forEach(img => {
+      const src = img.getAttribute('src');
+      // Solo reemplazar imágenes locales jpg/jpeg/png (no URLs externas)
+      if (src && !src.startsWith('http') && /\.(jpg|jpeg|png)$/i.test(src)) {
+        const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+        img.setAttribute('src', webpSrc);
+      }
+    });
+  }
+}
+
 // Retardo mínimo para que la animación se vea bien, pero sin bloquear al usuario
 function hidePreloader() {
   const preloader = document.getElementById('preloader');
@@ -15,6 +34,9 @@ function hidePreloader() {
 
 // Usamos DOMContentLoaded para que sea mucho más rápido y no espere a imágenes que no existen
 document.addEventListener('DOMContentLoaded', () => {
+  // Servir WebP si el navegador lo soporta (antes de que carguen las imágenes)
+  initWebPSwap();
+
   // Inicializaciones previas
   initHeroSlider();
   initScrollAnimations();
