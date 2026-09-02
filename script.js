@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyNavShadow();
   initSmokeEffect();
   initProductModal();
+  initPriceDecimals();
 
   // Ocultar preloader después de un tiempo suficiente para ver la animación (2.5s)
   setTimeout(hidePreloader, 2500);
@@ -273,7 +274,7 @@ function initProductModal() {
       // Populate modal
       titleEl.textContent = name;
       descEl.textContent = desc;
-      priceEl.textContent = price;
+      formatPriceElement(priceEl, price);
 
       if (imgSrc) {
         imgEl.src = imgSrc;
@@ -335,3 +336,26 @@ window.handleImageError = function(img) {
     container.appendChild(span);
   }
 };
+
+/* ───────────────────────────────────────────
+   Price Decimals Formatting
+   Hace que los decimales (,XX€) se vean más pequeños
+   ─────────────────────────────────────────── */
+function formatPriceElement(el, priceText) {
+  // Regex: captura la parte entera y la decimal+símbolo
+  // Ej: "14,90€" → groups: "14" y ",90€"
+  // Ej: "15€"   → no match, se deja tal cual
+  const match = priceText.match(/^(\d+)(,\d+)(€)$/);
+  if (match) {
+    el.innerHTML = match[1] + '<span class="price-decimals">' + match[2] + match[3] + '</span>';
+  } else {
+    el.textContent = priceText;
+  }
+}
+
+function initPriceDecimals() {
+  document.querySelectorAll('.menu-card-price').forEach(el => {
+    const text = el.textContent.trim();
+    formatPriceElement(el, text);
+  });
+}

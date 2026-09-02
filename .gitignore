@@ -1,6 +1,8 @@
 # Backup de imágenes originales (sin comprimir)
 img_originals/
+NuevasBurguers/
 
 # Scripts de optimización (no necesarios en producción)
 optimize_images.sh
 reorganize_images.sh
+process_new_images.sh

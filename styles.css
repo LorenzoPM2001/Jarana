@@ -646,8 +646,9 @@ button {
 }
 
 .menu-card-price .price-decimals {
-  font-size: 1rem;
-  vertical-align: super;
+  font-size: 0.65em;
+  vertical-align: baseline;
+  opacity: 0.85;
 }
 
 /* Placeholder image */
@@ -1171,6 +1172,12 @@ button {
   font-size: 2.5rem;
   color: var(--accent-yellow);
   letter-spacing: 1px;
+}
+
+.modal-price .price-decimals {
+  font-size: 0.65em;
+  vertical-align: baseline;
+  opacity: 0.85;
 }
 
 /* ═══════════════════════════════════════════
