@@ -534,6 +534,56 @@ button {
   gap: var(--space-sm);
 }
 
+/* Simple Item Bar (no-image inline item) */
+.simple-item-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s var(--ease-out);
+  cursor: pointer;
+}
+
+.simple-item-bar:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.simple-item-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+}
+
+.simple-item-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.simple-item-price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--accent-yellow);
+  letter-spacing: 1px;
+  margin-top: var(--space-xs);
+}
+
+.simple-item-price .price-decimals {
+  font-size: 0.65em;
+  vertical-align: baseline;
+  opacity: 0.85;
+}
+
 /* ═══════════════════════════════════════════
    MENU CARD
    ═══════════════════════════════════════════ */
@@ -611,6 +661,83 @@ button {
 @keyframes badgePulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(232, 132, 60, 0.5); }
   50% { box-shadow: 0 0 0 8px rgba(232, 132, 60, 0); }
+}
+
+.menu-card-image .badge.badge-limited,
+.modal-image-container .badge.badge-limited {
+  position: absolute;
+  top: auto;
+  bottom: 16px;
+  left: auto;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: rgba(40, 40, 40, 0.85);
+  color: #ffb74d;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 183, 77, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  animation: limitedTextPulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes limitedTextPulse {
+  0%, 100% { color: #ffb74d; text-shadow: none; }
+  50% { color: #ff4d4d; text-shadow: 0 0 6px rgba(255, 77, 77, 0.4); }
+}
+
+/* Pure CSS mini clock */
+.badge-limited-clock {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background: rgba(30, 30, 30, 0.95);
+  border: 1.5px solid #ffb74d;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Hour hand */
+.badge-limited-clock::before {
+  content: '';
+  position: absolute;
+  width: 1.5px;
+  height: 5px;
+  background: #ffb74d;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1px;
+  transform-origin: bottom center;
+}
+
+/* Minute hand */
+.badge-limited-clock::after {
+  content: '';
+  position: absolute;
+  width: 1.5px;
+  height: 4px;
+  background: #ffb74d;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-1px) rotate(90deg);
+  transform-origin: top center;
+  border-radius: 1px;
+  animation: clockTick 4s steps(60) infinite;
+}
+
+@keyframes clockTick {
+  from { transform: translateY(-1px) rotate(90deg); }
+  to { transform: translateY(-1px) rotate(450deg); }
 }
 
 .menu-card-body {
@@ -1089,6 +1216,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .modal-image-container img {

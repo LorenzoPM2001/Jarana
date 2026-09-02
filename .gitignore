@@ -6,3 +6,12 @@ NuevasBurguers/
 optimize_images.sh
 reorganize_images.sh
 process_new_images.sh
+
+# Imágenes
+img/burgers-chicken/jpg/*
+img/burgers-ternera/jpg/*
+img/compartir/jpg/*
+img/hotdogs/jpg/*
+img/sandwiches/jpg/*
+img/vegana/jpg/*
+img/logo/jpg/*

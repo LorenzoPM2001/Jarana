@@ -259,16 +259,27 @@ function initProductModal() {
       const imgSrc = card.querySelector('img')?.src || '';
       const allergens = card.getAttribute('data-allergens') || '';
       
-      // Check for badge
-      const badge = card.querySelector('.badge');
-      if (badge && !card.classList.contains('salsa-item')) {
+      // Check for primary badge (e.g., NUEVO, POPULAR)
+      const primaryBadge = card.querySelector('.badge:not(.badge-limited)');
+      if (primaryBadge && !card.classList.contains('salsa-item')) {
         // Clone the badge to keep classes
-        badgeEl.className = badge.className;
-        badgeEl.textContent = badge.textContent;
+        badgeEl.className = primaryBadge.className;
+        badgeEl.textContent = primaryBadge.textContent;
         badgeEl.style.display = 'inline-block';
         badgeEl.classList.add('modal-badge-small');
       } else {
         badgeEl.style.display = 'none';
+      }
+
+      // Check for limited-time badge
+      const limitedBadge = card.querySelector('.badge-limited');
+      const modalLimitedBadge = document.getElementById('modal-badge-limited');
+      if (modalLimitedBadge) {
+        if (limitedBadge) {
+          modalLimitedBadge.style.display = 'inline-flex';
+        } else {
+          modalLimitedBadge.style.display = 'none';
+        }
       }
 
       // Populate modal
@@ -354,7 +365,7 @@ function formatPriceElement(el, priceText) {
 }
 
 function initPriceDecimals() {
-  document.querySelectorAll('.menu-card-price').forEach(el => {
+  document.querySelectorAll('.menu-card-price, .simple-item-price').forEach(el => {
     const text = el.textContent.trim();
     formatPriceElement(el, text);
   });

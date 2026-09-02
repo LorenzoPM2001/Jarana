@@ -90,6 +90,7 @@
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/PX.webp" alt="PX Burger" loading="lazy" onerror="handleImageError(this)">
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Por tiempo limitado</span>
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">PX</h3>
@@ -97,7 +98,7 @@
               la plancha, Queso cheddar ahumado, Cebolla caramelizada, Carrillera guisada deshilachada, Reducción de
               Pedro Ximénez, Queso Payoyo curado</p>
             <div class="menu-card-footer">
-              <span class="menu-card-price">15€</span>
+              <span class="menu-card-price">14,90€</span>
             </div>
           </div>
         </div>
@@ -107,6 +108,7 @@
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-chicken/webp/mk-burger.webp" alt="M.K Burger" loading="lazy"
               onerror="handleImageError(this)">
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Por tiempo limitado</span>
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">M.K BURGER</h3>
@@ -123,6 +125,7 @@
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/187-burguer.webp" alt="187 Burger" loading="lazy"
               onerror="handleImageError(this)">
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Por tiempo limitado</span>
           </div>
           <div class="menu-card-body">
             <h3 class="menu-card-name">187</h3>
@@ -143,24 +146,10 @@
         <h2 class="section-title">PARA COMPARTIR</h2>
         <div class="section-line"></div>
       </div>
-
+      <!-- ═══════════ PATATAS ═══════════ -->
       <div class="menu-subsection">
         <h3 class="subsection-title">🍟 PATATAS</h3>
         <div class="menu-grid">
-          <!-- ═══════════ BASIC FRIES ═══════════ -->
-          <div class="menu-card " data-allergens="Gluten">
-            <div class="menu-card-image">
-              <img src="img/compartir/webp/basic-fries.webp" alt="BASIC FRIES" onerror="handleImageError(this)"
-                loading="lazy">
-            </div>
-            <div class="menu-card-body">
-              <h3 class="menu-card-name">BASIC FRIES</h3>
-              <p class="menu-card-desc">Patatas fritas con salsa a elegir</p>
-              <div class="menu-card-footer">
-                <span class="menu-card-price">4,50€</span>
-              </div>
-            </div>
-          </div>
           <!-- ═══════════ CHEESBACON ═══════════ -->
           <div class="menu-card" data-allergens="Gluten, Lácteos">
             <div class="menu-card-image">
@@ -222,8 +211,15 @@
             </div>
           </div>
         </div>
+        <!-- ═══════════ BASIC FRIES (simple bar) ═══════════ -->
+        <div class="simple-item-bar animate-in" data-allergens="Gluten">
+          <h3 class="simple-item-name">BASIC FRIES</h3>
+          <p class="simple-item-desc">Patatas fritas</p>
+          <span class="simple-item-price">4,50€</span>
+        </div>
       </div>
 
+      <!-- ═══════════ NACHOS ═══════════ -->
       <div class="menu-subsection">
         <h3 class="subsection-title">🌮 NACHOS TOTOPOS</h3>
         <div class="menu-grid">
@@ -273,6 +269,7 @@
         </div>
       </div>
 
+      <!-- ═══════════ CHICKEN ═══════════ -->
       <div class="menu-subsection">
         <h3 class="subsection-title">🍗 CHICKEN</h3>
         <div class="menu-grid">
@@ -320,6 +317,7 @@
         </div>
       </div>
 
+      <!-- ═══════════ OTROS ENTRANTES ═══════════ -->
       <div class="menu-subsection">
         <h3 class="subsection-title">🥘 OTROS ENTRANTES</h3>
         <div class="menu-grid">
@@ -394,38 +392,6 @@
         <div class="section-line"></div>
       </div>
       <div class="menu-grid">
-        <!-- ═══════════ PX ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos">
-          <div class="menu-card-image">
-            <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/burgers-ternera/webp/PX.webp" alt="PX Burger" loading="lazy" onerror="handleImageError(this)">
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">PX</h3>
-            <p class="menu-card-desc">Pan brioche con queso gratinado, Salsa Jarana, 1 carne smash de 90 g con cebolla a
-              la plancha, Queso cheddar ahumado, Cebolla caramelizada, Carrillera guisada deshilachada, Reducción de
-              Pedro Ximénez, Queso Payoyo curado</p>
-            <div class="menu-card-footer">
-              <span class="menu-card-price">14,90€</span>
-            </div>
-          </div>
-        </div>
-        <!-- ═══════════ 187 ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos">
-          <div class="menu-card-image">
-            <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/burgers-ternera/webp/187-burguer.webp" alt="187 Burger" loading="lazy"
-              onerror="handleImageError(this)">
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">187</h3>
-            <p class="menu-card-desc">Pan Juanito Baker, Doble smash Rubia gallega, Doble cheddar ahumado, Mermelada de
-              bacon casera, Costilla desmigada, Salsa "MayoTijuana" casera, coronado con pipas caramelizadas</p>
-            <div class="menu-card-footer">
-              <span class="menu-card-price">13,90€</span>
-            </div>
-          </div>
-        </div>
         <!-- ═══════════ CLASSIC BURGER ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
@@ -437,7 +403,7 @@
             <p class="menu-card-desc">Pan Brioch, Doble smash, Doble Cheddar, Pepinillos, Cebolla, Bacon, Salsa Jarana
             </p>
             <div class="menu-card-footer">
-              <span class="menu-card-price">9,90€</span>
+              <span class="menu-card-price">8,90€</span>
             </div>
           </div>
         </div>
@@ -488,6 +454,23 @@
             </div>
           </div>
         </div>
+        <!-- ═══════════ 187 ═══════════ -->
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/burgers-ternera/webp/187-burguer.webp" alt="187 Burger" loading="lazy"
+              onerror="handleImageError(this)">
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Por tiempo limitado</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">187</h3>
+            <p class="menu-card-desc">Pan Juanito Baker, Doble smash Rubia gallega, Doble cheddar ahumado, Mermelada de
+              bacon casera, Costilla desmigada, Salsa "MayoTijuana" casera, coronado con pipas caramelizadas</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">13,90€</span>
+            </div>
+          </div>
+        </div>
         <!-- ═══════════ SIX CHEESE ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos">
           <div class="menu-card-image">
@@ -504,6 +487,23 @@
             </div>
           </div>
         </div>
+        <!-- ═══════════ PX ═══════════ -->
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/burgers-ternera/webp/PX.webp" alt="PX Burger" loading="lazy" onerror="handleImageError(this)">
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Por tiempo limitado</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">PX</h3>
+            <p class="menu-card-desc">Pan brioche con queso gratinado, Salsa Jarana, 1 carne smash de 90 g con cebolla a
+              la plancha, Queso cheddar ahumado, Cebolla caramelizada, Carrillera guisada deshilachada, Reducción de
+              Pedro Ximénez, Queso Payoyo curado</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">14,90€</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -515,22 +515,6 @@
         <div class="section-line"></div>
       </div>
       <div class="menu-grid">
-        <!-- ═══════════ M.K BURGER ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos">
-          <div class="menu-card-image">
-            <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/burgers-chicken/webp/mk-burger.webp" alt="M.K Burger" loading="lazy"
-              onerror="handleImageError(this)">
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">M.K BURGER</h3>
-            <p class="menu-card-desc">Pan Brioche, Pollo Crispy, Bañado en salsa Mango-Habanero y Teriyaki, Base de
-              Colslaw(Ensalada de Col), Doble queso Havarti, Semillas de Sésamo</p>
-            <div class="menu-card-footer">
-              <span class="menu-card-price">13€</span>
-            </div>
-          </div>
-        </div>
         <!-- ═══════════ BASIC CHICKEN ═══════════ -->
         <div class="menu-card " data-allergens="Gluten">
           <div class="menu-card-image">
@@ -572,6 +556,23 @@
               Monterrey Jack, salsa Jarana</p>
             <div class="menu-card-footer">
               <span class="menu-card-price">11,90€</span>
+            </div>
+          </div>
+        </div>
+        <!-- ═══════════ M.K BURGER ═══════════ -->
+        <div class="menu-card" data-allergens="Gluten, Lácteos">
+          <div class="menu-card-image">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/burgers-chicken/webp/mk-burger.webp" alt="M.K Burger" loading="lazy"
+              onerror="handleImageError(this)">
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Por tiempo limitado</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">M.K BURGER</h3>
+            <p class="menu-card-desc">Pan Brioche, Pollo Crispy, Bañado en salsa Mango-Habanero y Teriyaki, Base de
+              Colslaw(Ensalada de Col), Doble queso Havarti, Semillas de Sésamo</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">13€</span>
             </div>
           </div>
         </div>
@@ -760,6 +761,9 @@
       <div class="modal-body">
         <div class="modal-image-container">
           <img id="modal-img" src="" alt="Producto">
+          <div id="modal-badge-limited" class="badge badge-limited" style="display: none;">
+            <span class="badge-limited-clock"></span>Por tiempo limitado
+          </div>
         </div>
         <div class="modal-details">
           <div class="modal-title-wrapper">
