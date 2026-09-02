@@ -11,7 +11,7 @@
   <meta property="og:description" content="Las mejores hamburguesas artesanales y street food. ¡Descubre nuestro menú!">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaranafood.com">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="icon" href="img/logo/jpg/LogoJarana.png" type="image/png">
 </head>
 
@@ -86,7 +86,7 @@
       </div>
       <div class="featured-grid">
         <!-- ═══════════ PX ═══════════ -->
-        <div class="featured-card" data-allergens="Gluten, Lácteos">
+        <div class="featured-card" data-allergens="Gluten, Lácteos" data-trazas="Soja, Frutos de cáscara">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/PX.webp" alt="PX Burger" loading="lazy" onerror="handleImageError(this)">
@@ -488,7 +488,7 @@
           </div>
         </div>
         <!-- ═══════════ PX ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos">
+        <div class="menu-card" data-allergens="Gluten, Lácteos" data-trazas="Soja, Frutos de cáscara">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/PX.webp" alt="PX Burger" loading="lazy" onerror="handleImageError(this)">
@@ -758,23 +758,44 @@
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <button class="modal-close" aria-label="Cerrar">&times;</button>
+      
+      <!-- ════ SUB-MODAL ALERGENOS ════ -->
+      <div id="modal-info-overlay" class="modal-info-overlay">
+        <div class="info-overlay-header">
+          <h3>Alérgenos y Trazas</h3>
+          <button id="btn-info-close" class="btn-info-close" aria-label="Cerrar Info">&times;</button>
+        </div>
+        <div class="info-overlay-body">
+          <div class="info-block" id="block-allergens" style="display: none;">
+            <span class="info-label">⚠️ Contiene:</span>
+            <div id="modal-allergens" class="allergens-grid"></div>
+          </div>
+          <div class="info-block" id="block-traces" style="display: none;">
+            <span class="info-label">🔄 Puede contener trazas de:</span>
+            <div id="modal-trazas" class="allergens-grid"></div>
+          </div>
+        </div>
+        <div class="info-overlay-footer">
+          <button id="btn-info-return" class="btn-info-return">Volver</button>
+        </div>
+      </div>
+
       <div class="modal-body">
         <div class="modal-image-container">
           <img id="modal-img" src="" alt="Producto">
-          <div id="modal-badge-limited" class="badge badge-limited" style="display: none;">
-            <span class="badge-limited-clock"></span>Por tiempo limitado
-          </div>
         </div>
         <div class="modal-details">
           <div class="modal-title-wrapper">
             <h3 id="modal-title" class="modal-title"></h3>
+            <div id="modal-clock" class="badge-limited-clock inline-clock" style="display: none;" title="Por tiempo limitado"></div>
             <span id="modal-badge" class="badge"></span>
           </div>
           <p id="modal-desc" class="modal-desc"></p>
-          <div class="modal-allergens-container">
-            <span class="allergens-label">⚠️ Alérgenos:</span>
-            <span id="modal-allergens" class="allergens-text"></span>
-          </div>
+          
+          <button id="btn-info-toggle" class="btn-info-toggle" style="display: none;">
+            ⓘ Información y Alérgenos
+          </button>
+
           <div class="modal-footer-price">
             <span id="modal-price" class="modal-price"></span>
           </div>
@@ -783,7 +804,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=10"></script>
 </body>
 
 </html>

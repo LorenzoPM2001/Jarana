@@ -246,7 +246,13 @@ function initProductModal() {
   const descEl = document.getElementById('modal-desc');
   const priceEl = document.getElementById('modal-price');
   const allergensEl = document.getElementById('modal-allergens');
-  const allergensContainer = modal.querySelector('.modal-allergens-container');
+  
+  // New Info Panel Elements
+  const btnInfoToggle = document.getElementById('btn-info-toggle');
+  const modalInfoPanel = document.getElementById('modal-info-panel');
+  const blockAllergens = document.getElementById('block-allergens');
+  const blockTraces = document.getElementById('block-traces');
+  const trazasEl = document.getElementById('modal-trazas');
 
   const cards = document.querySelectorAll('.menu-card, .featured-card');
 
@@ -258,6 +264,7 @@ function initProductModal() {
       const price = card.querySelector('.menu-card-price')?.textContent || '';
       const imgSrc = card.querySelector('img')?.src || '';
       const allergens = card.getAttribute('data-allergens') || '';
+      const trazas = card.getAttribute('data-trazas') || '';
       
       // Check for primary badge (e.g., NUEVO, POPULAR)
       const primaryBadge = card.querySelector('.badge:not(.badge-limited)');
@@ -273,12 +280,12 @@ function initProductModal() {
 
       // Check for limited-time badge
       const limitedBadge = card.querySelector('.badge-limited');
-      const modalLimitedBadge = document.getElementById('modal-badge-limited');
-      if (modalLimitedBadge) {
+      const modalClock = document.getElementById('modal-clock');
+      if (modalClock) {
         if (limitedBadge) {
-          modalLimitedBadge.style.display = 'inline-flex';
+          modalClock.style.display = 'inline-block';
         } else {
-          modalLimitedBadge.style.display = 'none';
+          modalClock.style.display = 'none';
         }
       }
 
@@ -306,11 +313,67 @@ function initProductModal() {
         pText.style.display = 'block';
       }
 
-      if (allergens) {
-        allergensEl.textContent = allergens;
-        allergensContainer.style.display = 'block';
-      } else {
-        allergensContainer.style.display = 'none';
+      // Reset Info Panel state on open
+      if (btnInfoToggle) {
+        btnInfoToggle.classList.remove('active');
+        btnInfoToggle.style.display = 'none';
+      }
+      const modalInfoOverlay = document.getElementById('modal-info-overlay');
+      if (modalInfoOverlay) {
+        modalInfoOverlay.classList.remove('open');
+      }
+      if (blockAllergens) blockAllergens.style.display = 'none';
+      if (blockTraces) blockTraces.style.display = 'none';
+
+      if (allergens || trazas) {
+        // Full map of all 14 standard EU allergen icons
+        const iconMap = {
+          'Gluten': 'gluten.png',
+          'Crustáceos': 'crustaceos.png',
+          'Huevo': 'huevo.png',
+          'Pescado': 'pescado.png',
+          'Cacahuetes': 'cacahuetes.png',
+          'Soja': 'soja.png',
+          'Lácteos': 'lacteos.png',
+          'Frutos de cáscara': 'frutos_de_cascara.png',
+          'Apio': 'apio.png',
+          'Mostaza': 'mostaza.png',
+          'Sésamo': 'sesamo.png',
+          'Sulfitos': 'sulfitos.png',
+          'Altramuces': 'altramuces.png',
+          'Moluscos': 'moluscos.png'
+        };
+
+        const generateIconsHtml = (dataStr, isTrace = false) => {
+          if (!dataStr) return '';
+          const extraClass = isTrace ? ' allergen-image-trace' : '';
+          return dataStr.split(',').map(a => {
+            const name = a.trim();
+            const fileName = iconMap[name];
+            
+            if (fileName) {
+              return `<div class="allergen-icon-wrapper" title="${name}">
+                        <img src="img/allergens/${fileName}" alt="${name}" class="allergen-image${extraClass}">
+                      </div>`;
+            } else {
+              return `<div class="allergen-icon-wrapper" title="${name}">
+                        <span class="allergen-text-badge">${name}</span>
+                      </div>`;
+            }
+          }).join('');
+        };
+
+        if (allergens) {
+          allergensEl.innerHTML = generateIconsHtml(allergens, false);
+          if (blockAllergens) blockAllergens.style.display = 'flex';
+        }
+        
+        if (trazas) {
+          trazasEl.innerHTML = generateIconsHtml(trazas, true);
+          if (blockTraces) blockTraces.style.display = 'flex';
+        }
+
+        if (btnInfoToggle) btnInfoToggle.style.display = 'flex';
       }
 
       // Show modal
@@ -326,6 +389,30 @@ function initProductModal() {
 
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
+
+  // Info Overlay Toggle Logic
+  const globalBtnInfoToggle = document.getElementById('btn-info-toggle');
+  const globalModalInfoOverlay = document.getElementById('modal-info-overlay');
+  const globalBtnInfoClose = document.getElementById('btn-info-close');
+
+  if (globalBtnInfoToggle && globalModalInfoOverlay) {
+    globalBtnInfoToggle.addEventListener('click', () => {
+      globalModalInfoOverlay.classList.add('open');
+    });
+  }
+
+  if (globalBtnInfoClose && globalModalInfoOverlay) {
+    globalBtnInfoClose.addEventListener('click', () => {
+      globalModalInfoOverlay.classList.remove('open');
+    });
+  }
+
+  const globalBtnInfoReturn = document.getElementById('btn-info-return');
+  if (globalBtnInfoReturn && globalModalInfoOverlay) {
+    globalBtnInfoReturn.addEventListener('click', () => {
+      globalModalInfoOverlay.classList.remove('open');
+    });
+  }
 }
 
 /* ───────────────────────────────────────────
