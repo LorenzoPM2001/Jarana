@@ -341,7 +341,8 @@ function initProductModal() {
           'Sésamo': 'sesamo.png',
           'Sulfitos': 'sulfitos.png',
           'Altramuces': 'altramuces.png',
-          'Moluscos': 'moluscos.png'
+          'Moluscos': 'moluscos.png',
+          'NODISP': 'NODISP.png'
         };
 
         const generateIconsHtml = (dataStr, isTrace = false) => {
