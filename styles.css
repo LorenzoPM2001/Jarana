@@ -743,14 +743,15 @@ button {
 }
 
 @keyframes badgePulse {
-
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(232, 132, 60, 0.5);
+    transform: scale(1);
+    opacity: 1;
   }
 
   50% {
-    box-shadow: 0 0 0 8px rgba(232, 132, 60, 0);
+    transform: scale(1.06);
+    opacity: 0.88;
   }
 }
 
@@ -768,29 +769,26 @@ button {
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  background: rgba(40, 40, 40, 0.85);
+  background: rgba(35, 35, 35, 0.9);
   color: #ffb74d;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 183, 77, 0.3);
+  border: 1px solid rgba(255, 183, 77, 0.4);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  animation: limitedTextPulse 2s ease-in-out infinite;
+  animation: limitedTextPulse 2.5s ease-in-out infinite;
   white-space: nowrap;
 }
 
 @keyframes limitedTextPulse {
-
   0%,
   100% {
     color: #ffb74d;
-    text-shadow: none;
-    border-color: #ffb74d;
+    border-color: rgba(255, 183, 77, 0.4);
+    opacity: 1;
   }
 
   50% {
-    color: #ff4d4d;
-    text-shadow: 0 0 6px rgba(255, 77, 77, 0.4);
-    border-color: #ff4d4d;
+    color: #ff5252;
+    border-color: rgba(255, 82, 82, 0.6);
+    opacity: 0.85;
   }
 }
 
@@ -1843,6 +1841,11 @@ button {
 
   .section-title {
     font-size: 1.6rem;
+  }
+
+  /* Desactivar filtro pesado de partículas en móvil para máxima fluidez */
+  .spooky-particle {
+    filter: none;
   }
 }
 

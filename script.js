@@ -197,23 +197,40 @@ function initSmokeEffect() {
   const container = document.getElementById('smoke-container');
   if (!container) return;
 
-  const particleCount = 15; // Number of simultaneous smoke puffs
+  const isMobile = window.innerWidth <= 768;
+  const particleCount = isMobile ? 6 : 14; // Reducido en móvil para rendimiento óptimo
   
   for (let i = 0; i < particleCount; i++) {
     createSmokeParticle(container);
   }
+
+  // Pausar animaciones cuando el usuario cambia de pestaña para no gastar batería
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      container.style.display = 'none';
+    } else {
+      container.style.display = 'block';
+    }
+  });
 }
 
 function createSmokeParticle(container) {
+  // Si la pestaña está oculta, esperar para no seguir consumiendo recursos
+  if (document.hidden) {
+    setTimeout(() => createSmokeParticle(container), 2000);
+    return;
+  }
+
   const particle = document.createElement('div');
   particle.className = 'smoke-puff';
   
   // Random properties for organic look
-  const size = Math.random() * 150 + 50; // 50px to 200px
+  const isMobile = window.innerWidth <= 768;
+  const size = isMobile ? (Math.random() * 80 + 40) : (Math.random() * 140 + 50); // Menor tamaño en móvil
   const startX = Math.random() * 100; // 0% to 100% viewport width
   const duration = Math.random() * 10 + 10; // 10s to 20s
-  const delay = Math.random() * 10; // 0s to 10s delay
-  const opacity = Math.random() * 0.15 + 0.05; // 0.05 to 0.2 opacity
+  const delay = Math.random() * 8; // delay inicial
+  const opacity = Math.random() * 0.12 + 0.04;
   
   particle.style.width = `${size}px`;
   particle.style.height = `${size}px`;
@@ -439,7 +456,12 @@ function initHalloweenBurst() {
       const x = e.clientX || rect.left + rect.width / 2;
       const y = e.clientY || rect.top + rect.height / 2;
 
-      const count = reduceMotion ? 6 : 14;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Control de acumulación: si ya hay muchas partículas en pantalla por clics rápidos, no spawnear más de 30
+      const existingParticles = document.querySelectorAll('.spooky-particle').length;
+      if (existingParticles > 30) return;
+
+      const count = reduceMotion ? 6 : (window.innerWidth <= 768 ? 10 : 14);
       for (let i = 0; i < count; i++) {
         spawnSpookyParticle(x, y, emojis[i % emojis.length], reduceMotion);
       }
