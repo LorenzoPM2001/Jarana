@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyNavShadow();
   initSmokeEffect();
   initProductModal();
+  initHalloweenBurst();
   initPriceDecimals();
 
   // Ocultar preloader después de un tiempo suficiente para ver la animación (2.5s)
@@ -257,6 +258,9 @@ function initProductModal() {
   const cards = document.querySelectorAll('.menu-card, .featured-card');
 
   cards.forEach(card => {
+    // Las tarjetas "próximamente" de Halloween no abren el modal (ver initHalloweenBurst)
+    if (card.classList.contains('halloween-card')) return;
+
     card.addEventListener('click', () => {
       // Extract data
       const name = card.querySelector('.menu-card-name')?.textContent || '';
@@ -414,6 +418,87 @@ function initProductModal() {
       globalModalInfoOverlay.classList.remove('open');
     });
   }
+}
+
+/* ───────────────────────────────────────────
+   Halloween Burst
+   Al pulsar la tarjeta "próximamente" explotan calabazas,
+   zombies, telarañas, arañas y fantasmas (sin abrir el modal)
+   ─────────────────────────────────────────── */
+function initHalloweenBurst() {
+  const cards = document.querySelectorAll('.halloween-card');
+  if (cards.length === 0) return;
+
+  const emojis = ['🎃', '🧟', '🕸️', '🕷️', '👻'];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const rect = card.getBoundingClientRect();
+      // Origen: punto de clic (o centro de la tarjeta si no hay coordenadas)
+      const x = e.clientX || rect.left + rect.width / 2;
+      const y = e.clientY || rect.top + rect.height / 2;
+
+      const count = reduceMotion ? 6 : 14;
+      for (let i = 0; i < count; i++) {
+        spawnSpookyParticle(x, y, emojis[i % emojis.length], reduceMotion);
+      }
+
+      // Pequeño temblor de la tarjeta (reinicia la animación en cada clic)
+      if (!reduceMotion) {
+        card.classList.remove('halloween-shake');
+        void card.offsetWidth;
+        card.classList.add('halloween-shake');
+      }
+    });
+  });
+}
+
+function spawnSpookyParticle(x, y, emoji, reduceMotion) {
+  const el = document.createElement('span');
+  el.className = 'spooky-particle';
+  el.textContent = emoji;
+  el.setAttribute('aria-hidden', 'true');
+  el.style.left = `${x}px`;
+  el.style.top = `${y}px`;
+  el.style.fontSize = `${22 + Math.random() * 26}px`;
+  document.body.appendChild(el);
+
+  const angle = Math.random() * Math.PI * 2;
+  const distance = (reduceMotion ? 40 : 120) + Math.random() * (reduceMotion ? 60 : 220);
+  const dx = Math.cos(angle) * distance;
+  const dy = Math.sin(angle) * distance - 60; // sesgo hacia arriba
+  const rot = (Math.random() - 0.5) * 540;
+  const duration = reduceMotion ? 1500 : 3000 + Math.random() * 1000;
+  const fall = 90 + Math.random() * 60; // caída suave tras la explosión
+
+  const anim = el.animate([
+    // Explosión rápida hacia fuera
+    { transform: 'translate(-50%, -50%) scale(0.2) rotate(0deg)', opacity: 1, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+    {
+      transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(1.15) rotate(${rot * 0.5}deg)`,
+      opacity: 1,
+      offset: 0.2,
+      easing: 'ease-in-out'
+    },
+    // Caída lenta, flotando
+    {
+      transform: `translate(calc(-50% + ${dx * 1.1}px), calc(-50% + ${dy + fall * 0.6}px)) scale(1) rotate(${rot * 0.8}deg)`,
+      opacity: 1,
+      offset: 0.7,
+      easing: 'ease-in'
+    },
+    // Se desvanece al final
+    {
+      transform: `translate(calc(-50% + ${dx * 1.15}px), calc(-50% + ${dy + fall}px)) scale(0.85) rotate(${rot}deg)`,
+      opacity: 0
+    }
+  ], {
+    duration,
+    fill: 'forwards'
+  });
+
+  anim.onfinish = () => el.remove();
 }
 
 /* ───────────────────────────────────────────
