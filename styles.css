@@ -317,6 +317,120 @@ button {
 }
 
 /* ═══════════════════════════════════════════
+   HALLOWEEN LOADER (temporal) — panes de calabaza
+   Las capas caen una sola vez y al final se iluminan las caras.
+   ═══════════════════════════════════════════ */
+.halloween-loader {
+  width: 130px;
+  height: 130px;
+  animation: loaderAura 3s ease-out both;
+}
+
+.halloween-loader .burger-part {
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.pumpkin {
+  position: relative;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 16px, rgba(110, 40, 0, 0.28) 16px 19px),
+    radial-gradient(ellipse at 50% 30%, #ff9a2e 0%, #f26b0f 60%, #b84a00 100%);
+  box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.3), inset 4px 4px 10px rgba(255, 200, 120, 0.25);
+}
+
+.pumpkin-top {
+  height: 48px;
+  border-radius: 55% 55% 20% 20% / 85% 85% 25% 25%;
+  animation-name: dropBunTop, pumpkinGlow;
+}
+
+.pumpkin-bottom {
+  height: 34px;
+  width: 94%;
+  border-radius: 20% 20% 55% 55% / 25% 25% 85% 85%;
+  animation-name: dropBunBottom, pumpkinGlow;
+}
+
+.pumpkin-stem {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 10px;
+  height: 14px;
+  margin-left: -5px;
+  background: linear-gradient(90deg, #3f5d1a, #6b8f2a, #3f5d1a);
+  border-radius: 3px 3px 2px 2px;
+  transform: rotate(8deg);
+}
+
+.pumpkin-face {
+  position: absolute;
+  inset: 0;
+}
+
+.pumpkin-face i {
+  position: absolute;
+  background: #2a0f00;
+  animation: faceLight 3s ease-out both;
+}
+
+.pumpkin-face .eye {
+  width: 11px;
+  height: 11px;
+  top: 38%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.pumpkin-face .eye-l { left: 26%; }
+.pumpkin-face .eye-r { right: 26%; transform: scaleX(-1); }
+
+.pumpkin-face .nose {
+  width: 6px;
+  height: 6px;
+  left: calc(50% - 3px);
+  top: 55%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.pumpkin-face .mouth {
+  width: 46px;
+  height: 11px;
+  left: calc(50% - 23px);
+  top: 66%;
+  clip-path: polygon(0 0, 12% 55%, 25% 15%, 38% 70%, 50% 20%, 62% 70%, 75% 15%, 88% 55%, 100% 0, 92% 100%, 8% 100%);
+}
+
+.pumpkin-bottom .pumpkin-face .eye { top: 18%; width: 9px; height: 9px; }
+.pumpkin-bottom .pumpkin-face .nose { top: 40%; }
+.pumpkin-bottom .pumpkin-face .mouth { top: 52%; height: 9px; width: 40px; left: calc(50% - 20px); }
+
+/* Caras apagadas → encendidas al terminar de montarse */
+@keyframes faceLight {
+  0%, 78% {
+    background: #2a0f00;
+    box-shadow: none;
+  }
+  90%, 100% {
+    background: #ffe27a;
+    box-shadow: 0 0 6px 2px #ffb300, 0 0 16px 6px rgba(255, 140, 0, 0.7);
+  }
+}
+
+/* Resplandor de la calabaza al final */
+@keyframes pumpkinGlow {
+  0%, 78% { filter: brightness(1); }
+  90%, 100% { filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 140, 0, 0.8)); }
+}
+
+/* Aura general de la hamburguesa iluminada */
+@keyframes loaderAura {
+  0%, 78% { filter: drop-shadow(0 0 0 rgba(255, 140, 0, 0)); }
+  100% { filter: drop-shadow(0 0 22px rgba(255, 140, 0, 0.75)); }
+}
+
+/* ═══════════════════════════════════════════
    HERO SECTION
    ═══════════════════════════════════════════ */
 

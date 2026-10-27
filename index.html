@@ -11,21 +11,37 @@
   <meta property="og:description" content="Las mejores hamburguesas artesanales y street food. ¡Descubre nuestro menú!">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaranafood.com">
-  <link rel="stylesheet" href="styles.css?v=10">
-  <link rel="icon" href="img/logo/jpg/LogoJarana.png" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="icon" href="img/logo/webp/logo_halloween.webp" type="image/png">
 </head>
 
 <body>
   <!-- ═══════════ PRELOADER ═══════════ -->
   <div id="preloader">
     <div class="preloader-content">
-      <img src="img/logo/jpg/LogoJarana.png" alt="Cargando Jarana Food" class="preloader-logo">
+      <img src="img/logo/webp/logo_halloween.webp" alt="Cargando Jarana Food" class="preloader-logo">
+      <!-- ORIGINAL (restaurar tras Halloween: descomentar esto y borrar el bloque Halloween de abajo)
       <div class="burger-loader">
         <div class="burger-part bun-top"></div>
         <div class="burger-part lettuce"></div>
         <div class="burger-part cheese"></div>
         <div class="burger-part meat"></div>
         <div class="burger-part bun-bottom"></div>
+      </div>
+      -->
+
+      <!-- HALLOWEEN: hamburguesa con panes de calabaza -->
+      <div class="burger-loader halloween-loader" role="status" aria-label="Cargando">
+        <div class="burger-part pumpkin pumpkin-top">
+          <span class="pumpkin-stem"></span>
+          <span class="pumpkin-face"><i class="eye eye-l"></i><i class="eye eye-r"></i><i class="nose"></i><i class="mouth"></i></span>
+        </div>
+        <div class="burger-part lettuce"></div>
+        <div class="burger-part cheese"></div>
+        <div class="burger-part meat"></div>
+        <div class="burger-part pumpkin pumpkin-bottom">
+          <span class="pumpkin-face"><i class="eye eye-l"></i><i class="eye eye-r"></i><i class="nose"></i><i class="mouth"></i></span>
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +63,7 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="img/logo/jpg/LogoJarana.png" alt="Jarana Food" class="hero-logo">
+      <img src="img/logo/webp/logo_halloween.webp" alt="Jarana Food" class="hero-logo">
       <p class="hero-tagline">Burgers · Street Food · Good Vibes</p>
       <a href="#novedades" class="hero-cta">🔥 VER MENÚ</a>
     </div>
@@ -85,19 +101,20 @@
         <div class="section-line"></div>
       </div>
       <div class="featured-grid">
-        <!-- ═══════════ HALLOWEEN (PRÓXIMAMENTE) ═══════════ -->
+        <!-- ═══════════ HALLOWEEN ═══════════ -->
         <div class="featured-card halloween-card">
           <div class="menu-card-image halloween-image">
             <span class="badge badge-halloween">🎃 HALLOWEEN</span>
-            <span class="badge badge-new">🔥 PROXIMAMENTE</span>
-            <img src="img/halloween.webp" alt="Hamburguesa Especial Halloween" loading="lazy" onerror="handleImageError(this)">
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/burgers-ternera/webp/halloween.webp" alt="Hamburguesa Especial Halloween" loading="lazy" onerror="handleImageError(this)">
+
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Hasta fin existencias</span>
           </div>
           <div class="menu-card-body">
-            <h3 class="menu-card-name">👻 👻 👻</h3>
-            <p class="menu-card-desc">Algo se está cocinando en la oscuridad... Quien la ha probado no ha vuelto para
-              contarlo. Este Halloween, la plancha despierta.</p>
+            <h3 class="menu-card-name">👻 DULCE MUERTE 👻</h3>
+            <p class="menu-card-desc">Pan brioche artesano, Salsa exclusiva Korean Mango BBQ, Doble smash de ternera, Doble queso Edam, Bacon crujiente, Doble Swiss Crunch de queso suizo, Coulis casero de frutos rojos</p>
             <div class="menu-card-footer">
-              <span class="menu-card-price halloween-price">✝✝</span>
+              <span class="menu-card-price halloween-price">13,90€</span>
             </div>
           </div>
         </div>
@@ -475,6 +492,25 @@
             </div>
           </div>
         </div>
+
+        <!-- ═══════════ HALLOWEEN ═══════════ -->
+        <div class="featured-card halloween-card">
+          <div class="menu-card-image halloween-image">
+            <span class="badge badge-halloween">🎃 HALLOWEEN</span>
+            <span class="badge badge-new">🔥 NUEVO</span>
+            <img src="img/burgers-ternera/webp/halloween.webp" alt="Hamburguesa Especial Halloween" loading="lazy" onerror="handleImageError(this)">
+
+            <span class="badge badge-limited"><span class="badge-limited-clock"></span>Hasta fin existencias</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">👻 👻 👻</h3>
+            <p class="menu-card-desc">Pan brioche artesano, Salsa exclusiva Korean Mango BBQ, Doble smash de ternera, Doble queso Edam, Bacon crujiente, Doble Swiss Crunch de queso suizo, Coulis casero de frutos rojos</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price halloween-price">13,90€</span>
+            </div>
+          </div>
+        </div>
+
         <!-- ═══════════ 187 ═══════════ -->
         <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Sulfitos, Soja, Frutos de cáscara" data-trazas="Sésamo, Pescado, Apio, Cacahuetes, Crustáceos, Moluscos">
           <div class="menu-card-image">

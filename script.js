@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPriceDecimals();
 
   // Ocultar preloader después de un tiempo suficiente para ver la animación (2.5s)
-  setTimeout(hidePreloader, 2500);
+  // HALLOWEEN: animación de 3s + 2s para apreciar la iluminación final (original: 2500)
+  setTimeout(hidePreloader, 3000);
 });
 
 /* ───────────────────────────────────────────
