@@ -317,120 +317,6 @@ button {
 }
 
 /* ═══════════════════════════════════════════
-   HALLOWEEN LOADER (temporal) — panes de calabaza
-   Las capas caen una sola vez y al final se iluminan las caras.
-   ═══════════════════════════════════════════ */
-.halloween-loader {
-  width: 130px;
-  height: 130px;
-  animation: loaderAura 3s ease-out both;
-}
-
-.halloween-loader .burger-part {
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-}
-
-.pumpkin {
-  position: relative;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 16px, rgba(110, 40, 0, 0.28) 16px 19px),
-    radial-gradient(ellipse at 50% 30%, #ff9a2e 0%, #f26b0f 60%, #b84a00 100%);
-  box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.3), inset 4px 4px 10px rgba(255, 200, 120, 0.25);
-}
-
-.pumpkin-top {
-  height: 48px;
-  border-radius: 55% 55% 20% 20% / 85% 85% 25% 25%;
-  animation-name: dropBunTop, pumpkinGlow;
-}
-
-.pumpkin-bottom {
-  height: 34px;
-  width: 94%;
-  border-radius: 20% 20% 55% 55% / 25% 25% 85% 85%;
-  animation-name: dropBunBottom, pumpkinGlow;
-}
-
-.pumpkin-stem {
-  position: absolute;
-  top: -9px;
-  left: 50%;
-  width: 10px;
-  height: 14px;
-  margin-left: -5px;
-  background: linear-gradient(90deg, #3f5d1a, #6b8f2a, #3f5d1a);
-  border-radius: 3px 3px 2px 2px;
-  transform: rotate(8deg);
-}
-
-.pumpkin-face {
-  position: absolute;
-  inset: 0;
-}
-
-.pumpkin-face i {
-  position: absolute;
-  background: #2a0f00;
-  animation: faceLight 3s ease-out both;
-}
-
-.pumpkin-face .eye {
-  width: 11px;
-  height: 11px;
-  top: 38%;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-}
-
-.pumpkin-face .eye-l { left: 26%; }
-.pumpkin-face .eye-r { right: 26%; transform: scaleX(-1); }
-
-.pumpkin-face .nose {
-  width: 6px;
-  height: 6px;
-  left: calc(50% - 3px);
-  top: 55%;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-}
-
-.pumpkin-face .mouth {
-  width: 46px;
-  height: 11px;
-  left: calc(50% - 23px);
-  top: 66%;
-  clip-path: polygon(0 0, 12% 55%, 25% 15%, 38% 70%, 50% 20%, 62% 70%, 75% 15%, 88% 55%, 100% 0, 92% 100%, 8% 100%);
-}
-
-.pumpkin-bottom .pumpkin-face .eye { top: 18%; width: 9px; height: 9px; }
-.pumpkin-bottom .pumpkin-face .nose { top: 40%; }
-.pumpkin-bottom .pumpkin-face .mouth { top: 52%; height: 9px; width: 40px; left: calc(50% - 20px); }
-
-/* Caras apagadas → encendidas al terminar de montarse */
-@keyframes faceLight {
-  0%, 78% {
-    background: #2a0f00;
-    box-shadow: none;
-  }
-  90%, 100% {
-    background: #ffe27a;
-    box-shadow: 0 0 6px 2px #ffb300, 0 0 16px 6px rgba(255, 140, 0, 0.7);
-  }
-}
-
-/* Resplandor de la calabaza al final */
-@keyframes pumpkinGlow {
-  0%, 78% { filter: brightness(1); }
-  90%, 100% { filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 140, 0, 0.8)); }
-}
-
-/* Aura general de la hamburguesa iluminada */
-@keyframes loaderAura {
-  0%, 78% { filter: drop-shadow(0 0 0 rgba(255, 140, 0, 0)); }
-  100% { filter: drop-shadow(0 0 22px rgba(255, 140, 0, 0.75)); }
-}
-
-/* ═══════════════════════════════════════════
    HERO SECTION
    ═══════════════════════════════════════════ */
 
@@ -1095,158 +981,6 @@ button {
   mask-composite: exclude;
   pointer-events: none;
   z-index: 1;
-}
-
-/* ───────── Halloween (Próximamente) ───────── */
-.featured-card.halloween-card {
-  background:
-    radial-gradient(circle at 50% 0%, rgba(255, 106, 0, 0.14), transparent 60%),
-    linear-gradient(160deg, #1c1322, #141414);
-  border-color: rgba(255, 106, 0, 0.25);
-}
-
-.featured-card.halloween-card::before {
-  background: linear-gradient(135deg, rgba(255, 106, 0, 0.55), transparent, rgba(138, 43, 226, 0.5));
-}
-
-.featured-card.halloween-card:hover {
-  border-color: rgba(255, 106, 0, 0.5);
-  box-shadow: 0 8px 40px rgba(255, 106, 0, 0.2), 0 0 60px rgba(138, 43, 226, 0.15);
-}
-
-.featured-card.halloween-card .menu-card-image {
-  height: 320px;
-}
-
-.featured-card.halloween-card .menu-card-image img {
-  object-fit: cover;
-  object-position: center 45%;
-  transform: none;
-  transition: transform 0.6s var(--ease-out);
-}
-
-.featured-card.halloween-card:hover .menu-card-image img {
-  transform: scale(1.05);
-}
-
-.halloween-image.placeholder-image {
-  flex-direction: column;
-  gap: var(--space-sm);
-  background:
-    radial-gradient(ellipse at 50% 120%, rgba(138, 43, 226, 0.35), transparent 65%),
-    radial-gradient(ellipse at 50% 40%, rgba(255, 106, 0, 0.12), transparent 60%),
-    #0d0b10;
-}
-
-.halloween-image .placeholder-text {
-  color: #ff7a1a;
-  opacity: 1;
-  text-shadow: 0 0 12px rgba(255, 106, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.3);
-  animation: hauntedFlicker 4s linear infinite;
-}
-
-.halloween-ghost {
-  font-size: 3.2rem;
-  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.35));
-  animation: ghostFloat 3.5s ease-in-out infinite;
-}
-
-.badge-halloween {
-  background: linear-gradient(135deg, #ff6a00, #8a2be2);
-  color: #fff;
-  box-shadow: 0 0 12px rgba(255, 106, 0, 0.45);
-}
-
-.menu-card-image .badge.badge-halloween {
-  left: auto;
-  right: 12px;
-}
-
-/* Explosión de Halloween al pulsar la tarjeta */
-.spooky-particle {
-  position: fixed;
-  z-index: 9999;
-  pointer-events: none;
-  line-height: 1;
-  user-select: none;
-  will-change: transform, opacity;
-  filter: drop-shadow(0 0 8px rgba(255, 106, 0, 0.6));
-}
-
-.featured-card.halloween-card.halloween-shake {
-  animation: halloweenShake 0.5s ease-in-out;
-}
-
-@keyframes halloweenShake {
-
-  0%,
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-
-  20% {
-    transform: translateX(-6px) rotate(-1.5deg);
-  }
-
-  40% {
-    transform: translateX(6px) rotate(1.5deg);
-  }
-
-  60% {
-    transform: translateX(-4px) rotate(-1deg);
-  }
-
-  80% {
-    transform: translateX(4px) rotate(1deg);
-  }
-}
-
-
-.halloween-price {
-  color: #ff3b3b;
-  letter-spacing: 6px;
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.55);
-}
-
-@keyframes ghostFloat {
-
-  0%,
-  100% {
-    transform: translateY(0) rotate(-4deg);
-    opacity: 0.85;
-  }
-
-  50% {
-    transform: translateY(-10px) rotate(4deg);
-    opacity: 0.45;
-  }
-}
-
-@keyframes hauntedFlicker {
-
-  0%,
-  18%,
-  22%,
-  25%,
-  53%,
-  57%,
-  100% {
-    opacity: 1;
-  }
-
-  20%,
-  24%,
-  55% {
-    opacity: 0.25;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .halloween-ghost,
-  .halloween-image .placeholder-text {
-    animation: none;
-  }
 }
 
 /* ═══════════════════════════════════════════
@@ -1956,10 +1690,6 @@ button {
     height: 200px;
   }
 
-  .featured-card.halloween-card .menu-card-image {
-    height: 280px;
-  }
-
   .category-nav-inner {
     padding: 0 var(--space-md);
   }
@@ -1974,11 +1704,6 @@ button {
 
   .section-title {
     font-size: 1.6rem;
-  }
-
-  /* Desactivar filtro pesado de partículas en móvil para máxima fluidez */
-  .spooky-particle {
-    filter: none;
   }
 }
 
@@ -1995,10 +1720,6 @@ button {
 
   .menu-card-image {
     height: 180px;
-  }
-
-  .featured-card.halloween-card .menu-card-image {
-    height: 250px;
   }
 
   .category-btn {

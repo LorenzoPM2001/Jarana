@@ -11,37 +11,21 @@
   <meta property="og:description" content="Las mejores hamburguesas artesanales y street food. ¡Descubre nuestro menú!">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaranafood.com">
-  <link rel="stylesheet" href="styles.css?v=12">
-  <link rel="icon" href="img/logo/webp/logo_halloween.webp" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="icon" href="img/logo/webp/LogoJarana.webp" type="image/webp">
 </head>
 
 <body>
   <!-- ═══════════ PRELOADER ═══════════ -->
   <div id="preloader">
     <div class="preloader-content">
-      <img src="img/logo/webp/logo_halloween.webp" alt="Cargando Jarana Food" class="preloader-logo">
-      <!-- ORIGINAL (restaurar tras Halloween: descomentar esto y borrar el bloque Halloween de abajo)
-      <div class="burger-loader">
+      <img src="img/logo/webp/LogoJarana.webp" alt="Cargando Jarana Food" class="preloader-logo">
+      <div class="burger-loader" role="status" aria-label="Cargando">
         <div class="burger-part bun-top"></div>
         <div class="burger-part lettuce"></div>
         <div class="burger-part cheese"></div>
         <div class="burger-part meat"></div>
         <div class="burger-part bun-bottom"></div>
-      </div>
-      -->
-
-      <!-- HALLOWEEN: hamburguesa con panes de calabaza -->
-      <div class="burger-loader halloween-loader" role="status" aria-label="Cargando">
-        <div class="burger-part pumpkin pumpkin-top">
-          <span class="pumpkin-stem"></span>
-          <span class="pumpkin-face"><i class="eye eye-l"></i><i class="eye eye-r"></i><i class="nose"></i><i class="mouth"></i></span>
-        </div>
-        <div class="burger-part lettuce"></div>
-        <div class="burger-part cheese"></div>
-        <div class="burger-part meat"></div>
-        <div class="burger-part pumpkin pumpkin-bottom">
-          <span class="pumpkin-face"><i class="eye eye-l"></i><i class="eye eye-r"></i><i class="nose"></i><i class="mouth"></i></span>
-        </div>
       </div>
     </div>
   </div>
@@ -63,7 +47,7 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="img/logo/webp/logo_halloween.webp" alt="Jarana Food" class="hero-logo">
+      <img src="img/logo/webp/LogoJarana.webp" alt="Jarana Food" class="hero-logo">
       <p class="hero-tagline">Burgers · Street Food · Good Vibes</p>
       <a href="#novedades" class="hero-cta">🔥 VER MENÚ</a>
     </div>
@@ -101,25 +85,27 @@
         <div class="section-line"></div>
       </div>
       <div class="featured-grid">
-        <!-- ═══════════ HALLOWEEN ═══════════ -->
-        <div class="featured-card halloween-card">
-          <div class="menu-card-image halloween-image">
-            <span class="badge badge-halloween">🎃 HALLOWEEN</span>
+        <!-- ═══════════ DULCE MUERTE ═══════════ -->
+        <div class="featured-card" data-allergens="Gluten, Huevo, Lácteos, Mostaza, Soja"
+          data-trazas="Pescado, Cacahuetes, Frutos de cáscara">
+          <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/burgers-ternera/webp/halloween.webp" alt="Hamburguesa Especial Halloween" loading="lazy" onerror="handleImageError(this)">
-
+            <img src="img/burgers-ternera/webp/halloween.webp" alt="Dulce Muerte Burger" loading="lazy"
+              onerror="handleImageError(this)">
             <span class="badge badge-limited"><span class="badge-limited-clock"></span>Hasta fin existencias</span>
           </div>
           <div class="menu-card-body">
-            <h3 class="menu-card-name">👻 DULCE MUERTE 👻</h3>
-            <p class="menu-card-desc">Pan brioche artesano, Salsa exclusiva Korean Mango BBQ, Doble smash de ternera, Doble queso Edam, Bacon crujiente, Doble Swiss Crunch de queso suizo, Coulis casero de frutos rojos</p>
+            <h3 class="menu-card-name">DULCE MUERTE</h3>
+            <p class="menu-card-desc">Pan brioche artesano, Salsa exclusiva Korean Mango BBQ, Doble smash de ternera,
+              Doble queso Edam, Bacon crujiente, Doble Swiss Crunch de queso suizo, Coulis casero de frutos rojos</p>
             <div class="menu-card-footer">
-              <span class="menu-card-price halloween-price">13,90€</span>
+              <span class="menu-card-price">13,90€</span>
             </div>
           </div>
         </div>
         <!-- ═══════════ PX ═══════════ -->
-        <div class="featured-card" data-allergens="Gluten, Huevo, Lácteos, Mostaza, Soja, Sulfitos" data-trazas="Apio, Cacahuetes, Sésamo, Frutos de cáscara">
+        <div class="featured-card" data-allergens="Gluten, Huevo, Lácteos, Mostaza, Soja, Sulfitos"
+          data-trazas="Apio, Cacahuetes, Sésamo, Frutos de cáscara">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/PX.webp" alt="PX Burger" loading="lazy" onerror="handleImageError(this)">
@@ -136,7 +122,8 @@
           </div>
         </div>
         <!-- ═══════════ M.K BURGER ═══════════ -->
-        <div class="featured-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja, Sulfitos" data-trazas="Pescado, Cacahuetes">
+        <div class="featured-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja, Sulfitos"
+          data-trazas="Pescado, Cacahuetes">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-chicken/webp/mk-burger.webp" alt="M.K Burger" loading="lazy"
@@ -153,7 +140,8 @@
           </div>
         </div>
         <!-- ═══════════ 187 ═══════════ -->
-        <div class="featured-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Sulfitos, Soja, Frutos de cáscara" data-trazas="Sésamo, Pescado, Apio, Cacahuetes, Crustáceos, Moluscos">
+        <div class="featured-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Sulfitos, Soja, Frutos de cáscara"
+          data-trazas="Sésamo, Pescado, Apio, Cacahuetes, Crustáceos, Moluscos">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/187-burguer.webp" alt="187 Burger" loading="lazy"
@@ -214,7 +202,8 @@
             </div>
           </div>
           <!-- ═══════════ BBQ FRIES ═══════════ -->
-          <div class="menu-card" data-allergens="Gluten, Lácteos, Mostaza, Soja" data-trazas="Cacahuetes, Frutos de cáscara, Sésamo, Sulfitos">
+          <div class="menu-card" data-allergens="Gluten, Lácteos, Mostaza, Soja"
+            data-trazas="Cacahuetes, Frutos de cáscara, Sésamo, Sulfitos">
             <div class="menu-card-image">
               <img src="img/compartir/webp/bbq fries.webp" alt="BBQ Fries" loading="lazy"
                 onerror="handleImageError(this)">
@@ -372,14 +361,16 @@
             </div>
           </div>
           <!-- ═══════════ MAC AND CHEESE ═══════════ -->
-          <div class="menu-card " data-allergens="Gluten, Lácteos, Soja" data-trazas="Huevo, Mostaza, Sulfitos, Cacahuetes">
+          <div class="menu-card " data-allergens="Gluten, Lácteos, Soja"
+            data-trazas="Huevo, Mostaza, Sulfitos, Cacahuetes">
             <div class="menu-card-image">
               <img src="img/compartir/webp/macandchees.webp" alt="MAC AND CHEESE" onerror="handleImageError(this)"
                 loading="lazy">
             </div>
             <div class="menu-card-body">
               <h3 class="menu-card-name">MAC AND CHEESE</h3>
-              <p class="menu-card-desc">Macarrones Americanos, Salsa Cheddar, Queso Fundido, Coronado con Bacon Crujiente
+              <p class="menu-card-desc">Macarrones Americanos, Salsa Cheddar, Queso Fundido, Coronado con Bacon
+                Crujiente
               </p>
               <div class="menu-card-footer">
                 <span class="menu-card-price">10€</span>
@@ -430,7 +421,8 @@
       </div>
       <div class="menu-grid">
         <!-- ═══════════ CLASSIC BURGER ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Soja" data-trazas="Mostaza, Sulfitos, Cacahuetes">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Soja"
+          data-trazas="Mostaza, Sulfitos, Cacahuetes">
           <div class="menu-card-image">
             <img src="img/burgers-ternera/webp/clasic burger.webp" alt="Classic Burger" loading="lazy"
               onerror="handleImageError(this)">
@@ -445,7 +437,8 @@
           </div>
         </div>
         <!-- ═══════════ FULLPORK BBQ ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja" data-trazas="Sésamo, Sulfitos, Cacahuetes">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja"
+          data-trazas="Sésamo, Sulfitos, Cacahuetes">
           <div class="menu-card-image">
             <img src="img/burgers-ternera/webp/fullpork.webp" alt="FullPork BBQ Burger" loading="lazy"
               onerror="handleImageError(this)">
@@ -461,7 +454,8 @@
           </div>
         </div>
         <!-- ═══════════ AMERICAN BURGER ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Sésamo" data-trazas="Mostaza, Sulfitos, Cacahuetes">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Sésamo"
+          data-trazas="Mostaza, Sulfitos, Cacahuetes">
           <div class="menu-card-image">
             <span class="badge badge-popular">⭐ POPULAR</span>
             <img src="img/burgers-ternera/webp/american burger.webp" alt="American Burger" loading="lazy"
@@ -493,26 +487,27 @@
           </div>
         </div>
 
-        <!-- ═══════════ HALLOWEEN ═══════════ -->
-        <div class="featured-card halloween-card">
-          <div class="menu-card-image halloween-image">
-            <span class="badge badge-halloween">🎃 HALLOWEEN</span>
+        <!-- ═══════════ DULCE MUERTE ═══════════ -->
+        <div class="menu-card">
+          <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
-            <img src="img/burgers-ternera/webp/halloween.webp" alt="Hamburguesa Especial Halloween" loading="lazy" onerror="handleImageError(this)">
-
+            <img src="img/burgers-ternera/webp/halloween.webp" alt="Dulce Muerte Burger" loading="lazy"
+              onerror="handleImageError(this)">
             <span class="badge badge-limited"><span class="badge-limited-clock"></span>Hasta fin existencias</span>
           </div>
           <div class="menu-card-body">
-            <h3 class="menu-card-name">👻 👻 👻</h3>
-            <p class="menu-card-desc">Pan brioche artesano, Salsa exclusiva Korean Mango BBQ, Doble smash de ternera, Doble queso Edam, Bacon crujiente, Doble Swiss Crunch de queso suizo, Coulis casero de frutos rojos</p>
+            <h3 class="menu-card-name">DULCE MUERTE</h3>
+            <p class="menu-card-desc">Pan brioche artesano, Salsa exclusiva Korean Mango BBQ, Doble smash de ternera,
+              Doble queso Edam, Bacon crujiente, Doble Swiss Crunch de queso suizo, Coulis casero de frutos rojos</p>
             <div class="menu-card-footer">
-              <span class="menu-card-price halloween-price">13,90€</span>
+              <span class="menu-card-price">13,90€</span>
             </div>
           </div>
         </div>
 
         <!-- ═══════════ 187 ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Sulfitos, Soja, Frutos de cáscara" data-trazas="Sésamo, Pescado, Apio, Cacahuetes, Crustáceos, Moluscos">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Sulfitos, Soja, Frutos de cáscara"
+          data-trazas="Sésamo, Pescado, Apio, Cacahuetes, Crustáceos, Moluscos">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/187-burguer.webp" alt="187 Burger" loading="lazy"
@@ -529,7 +524,8 @@
           </div>
         </div>
         <!-- ═══════════ SIX CHEESE ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Soja" data-trazas="Sésamo, Mostaza, Sulfitos, Cacahuetes">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Soja"
+          data-trazas="Sésamo, Mostaza, Sulfitos, Cacahuetes">
           <div class="menu-card-image">
             <img src="img/burgers-ternera/webp/sixis.webp" alt="Six Cheese Burger" loading="lazy"
               onerror="handleImageError(this)">
@@ -545,7 +541,8 @@
           </div>
         </div>
         <!-- ═══════════ PX ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Huevo, Lácteos, Mostaza, Soja, Sulfitos" data-trazas="Apio, Cacahuetes, Sésamo, Frutos de cáscara">
+        <div class="menu-card" data-allergens="Gluten, Huevo, Lácteos, Mostaza, Soja, Sulfitos"
+          data-trazas="Apio, Cacahuetes, Sésamo, Frutos de cáscara">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-ternera/webp/PX.webp" alt="PX Burger" loading="lazy" onerror="handleImageError(this)">
@@ -587,7 +584,8 @@
           </div>
         </div>
         <!-- ═══════════ CLASSIC CHICKEN ═══════════ -->
-        <div class="menu-card " data-allergens="Gluten, Lácteos, Huevo, Soja" data-trazas="Mostaza, Sulfitos, Cacahuetes">
+        <div class="menu-card " data-allergens="Gluten, Lácteos, Huevo, Soja"
+          data-trazas="Mostaza, Sulfitos, Cacahuetes">
           <div class="menu-card-image">
             <img src="img/burgers-chicken/webp/clasic chicken.webp" alt="CLASSIC CHICKEN"
               onerror="handleImageError(this)" loading="lazy">
@@ -617,7 +615,8 @@
           </div>
         </div>
         <!-- ═══════════ M.K BURGER ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja, Sulfitos" data-trazas="Pescado, Cacahuetes">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja, Sulfitos"
+          data-trazas="Pescado, Cacahuetes">
           <div class="menu-card-image">
             <span class="badge badge-new">🔥 NUEVO</span>
             <img src="img/burgers-chicken/webp/mk-burger.webp" alt="M.K Burger" loading="lazy"
@@ -673,7 +672,8 @@
       </div>
       <div class="menu-grid">
         <!-- ═══════════ NEW YORK ═══════════ -->
-        <div class="menu-card " data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja, Apio" data-trazas="Sésamo, Cacahuetes, Frutos de cáscara">
+        <div class="menu-card " data-allergens="Gluten, Lácteos, Huevo, Mostaza, Soja, Apio"
+          data-trazas="Sésamo, Cacahuetes, Frutos de cáscara">
           <div class="menu-card-image">
             <img src="img/hotdogs/webp/new york.webp" alt="NEW YORK" onerror="handleImageError(this)" loading="lazy">
           </div>
@@ -687,7 +687,8 @@
           </div>
         </div>
         <!-- ═══════════ SEATEL ═══════════ -->
-        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Apio, Soja" data-trazas="Mostaza, Sulfitos, Cacahuetes, Frutos de cáscara">
+        <div class="menu-card" data-allergens="Gluten, Lácteos, Huevo, Apio, Soja"
+          data-trazas="Mostaza, Sulfitos, Cacahuetes, Frutos de cáscara">
           <div class="menu-card-image">
             <span class="badge badge-popular">⭐ POPULAR</span>
             <img src="img/hotdogs/webp/seatel.webp" alt="Seatel Hot Dog" loading="lazy"
@@ -816,7 +817,7 @@
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <button class="modal-close" aria-label="Cerrar">&times;</button>
-      
+
       <!-- ════ SUB-MODAL ALERGENOS ════ -->
       <div id="modal-info-overlay" class="modal-info-overlay">
         <div class="info-overlay-header">
@@ -845,11 +846,12 @@
         <div class="modal-details">
           <div class="modal-title-wrapper">
             <h3 id="modal-title" class="modal-title"></h3>
-            <div id="modal-clock" class="badge-limited-clock inline-clock" style="display: none;" title="Por tiempo limitado"></div>
+            <div id="modal-clock" class="badge-limited-clock inline-clock" style="display: none;"
+              title="Por tiempo limitado"></div>
             <span id="modal-badge" class="badge"></span>
           </div>
           <p id="modal-desc" class="modal-desc"></p>
-          
+
           <button id="btn-info-toggle" class="btn-info-toggle" style="display: none;">
             ⓘ Información y Alérgenos
           </button>
@@ -862,7 +864,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=13"></script>
+  <script src="script.js?v=14"></script>
 </body>
 
 </html>
